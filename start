@@ -1,0 +1,3 @@
+#!/bin/sh
+npm start --prefix src/reveal.js -- --root="../../$1"
+

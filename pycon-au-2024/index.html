@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Who Tests the Testers? Making and Testing Pipelines</title>
+
+		<link rel="stylesheet" href="../src/reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../src/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../src/reveal.js/dist/theme/white-contrast.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../src/css/highlight/cupertino.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+					data-markdown="slides.md"
+					data-separator="^---\s*\n"
+					data-separator-vertical="^------\s*\n"
+					data-separator-notes="\n\n"
+					data-charset="utf-8"
+				>
+				</section>
+			</div>
+		</div>
+
+		<script src="../src/reveal.js/dist/reveal.js"></script>
+		<script src="../src/reveal.js/plugin/notes/notes.js"></script>
+		<script src="../src/reveal.js/plugin/highlight/highlight.js"></script>
+		
+		<script src="../src/reveal.js-plugins/markdown/markdown.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			const presentingConfig = {
+				progress: false,
+				controlsTutorial: false,
+				controls: false,
+				slideNumber: true,
+				showSlideNumber: 'speaker',
+			};
+			const displayConfig = {
+				progress: true,
+				controlsTutorial: true,
+				controls: true,
+				slideNumber: true,
+				showSlideNumber: 'all',
+				showNotes: true,
+			};
+			const additionalConfig = displayConfig;
+
+			Reveal.initialize({
+				width: 1920,
+				height: 1080,
+				hash: true,
+				transition: 'none',
+				backgroundTransition: 'none',
+
+				...additionalConfig,
+						
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+		});
+		</script>
+
+		<link rel="stylesheet" href="../src/css/reveal-override.css">
+
+	</body>
+</html>
