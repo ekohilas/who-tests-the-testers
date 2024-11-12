@@ -22,6 +22,21 @@ We'll give a quick run down of what pipelines are, and why they should be used, 
 
 Then, we'll showcase tools that can be used for testing, creating, and simulating pipelines, so you too can setup a system to always be sure that your pipeline changes won't cause any water damage.
 
+### References
+- GitLab References
+  - [GitLab Pipeline Reference](https://docs.gitlab.com/ee/ci/quick_start/)
+  - [GitLab VSCode Extension](https://docs.gitlab.com/ee/editor_extensions/visual_studio_code/index.html)
+  - [GitLab CI Linter](https://docs.gitlab.com/ee/ci/yaml/lint.html)
+  - [GitLab Pipeline Tools](https://docs.gitlab.com/ee/ci/pipeline_editor/index.html)
+  - [GitLab Pipeline Manual Execution](https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually)
+- GitLab Local Runner Tools
+  - [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+  - [gitlabci-local (gcil)](https://gitlab.com/RadianDevCore/tools/gcil)
+- GitLab YAML Generators
+  - [GitLab CI Python Library (GCIP)](https://gitlab.com/dbsystel/gitlab-ci-python-library)
+  - [Fluent GitLab CI](https://github.com/tsirysndr/fluent-gitlab-ci)
+  - [node-gitlab-ci](https://github.com/devowlio/node-gitlab-ci)
+
 ## Setup 
 1. Since reveal.js exists as a submodule, `git clone --recurse-submodules` needs to be used when cloning (or `git submodule update --init --recursive` if already cloned).
 2. `cd src/reveal.js && npm install`
