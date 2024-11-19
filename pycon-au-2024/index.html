@@ -51,7 +51,8 @@
 				showSlideNumber: 'all',
 				showNotes: true,
 			};
-			const additionalConfig = displayConfig;
+			const presenting = true;
+			const additionalConfig = presenting ? presentingConfig : displayConfig;
 
 			Reveal.initialize({
 				width: 1920,
