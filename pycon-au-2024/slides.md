@@ -29,6 +29,9 @@ And it got me thinking, if we as the Platform team help developers run tests for
 <!-- .element: class="fragment" -->
 
 So today, we'll unpack that topic, in 3 easy steps.
+
+> Next slide
+
 1. I'll briefly introduce what a pipeline is, and cover how to make one,
 2. show how they can break,
 3. and finally, deep dive into the methods to stop them from breaking.
@@ -527,9 +530,6 @@ database-test-job:
 <!-- .element: data-id="simple-ci" -->
 
 Can anyone tell me why it didn't run?
-
-TODO: Adjust to show
-(Scroll and pause for water)
 
 Yes, thank you, that's right.
 
@@ -1339,7 +1339,7 @@ That being said, they can help!
 ```
 <!-- .element: data-id="pipeline-test" -->
 
-As the author mentioned earlier, this programmatic approach does let you,
+As the authors mentioned earlier, this programmatic approach does let you,
 
 ------
 <!-- .element: data-auto-animate -->
@@ -1642,7 +1642,7 @@ However this doesn't work for all cases, as it won't result in valid yaml.
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
 
 So are generated pipelines a good idea?
-I think the author has a good view of this, which I'll do my best to summarise
+I think the authors have a good view of this, which I'll do my best to summarise
 
 ------
 <!-- .slide: data-background-image="images/gcip_quote_cons.svg"-->
