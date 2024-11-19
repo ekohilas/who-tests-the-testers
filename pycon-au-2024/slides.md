@@ -1700,11 +1700,11 @@ Question everything that is there, and utilise the least you can, to get the job
 As always, I'm open to feedback, as I'm continuously striving to be better.
 
 ------
-# <br> 
+# `@ekohilas`
+# `citest.nohumanerrors.com`
 ![qr code](images/qr_code.svg)<!-- .element: style="max-height: 95%"-->
 <!-- .element: class="r-stretch"-->
-# `citest.nohumanerrors.com`
-# `@ekohilas`
+# <br>
 
 You can find my contact, all related repos, tools, references, and sources at citest.nohumanerrors.com
 
@@ -1719,13 +1719,12 @@ And, if you're still wondering who tests the testers, I'll be around for questio
 Thank you to my friends, and family for supporting me, the open source contributors, finally to you, for listening!
 
 ------
-# Thanks! 
+# `@ekohilas`
+# `citest.nohumanerrors.com`
 ![qr code](images/qr_code.svg)<!-- .element: style="max-height: 95%"-->
 <!-- .element: class="r-stretch"-->
-# `citest.nohumanerrors.com`
-# `@ekohilas`
+# Thanks!
 
 I'll leave this up now so you can actually take pictures
 
 26:15 (00:30)
-
