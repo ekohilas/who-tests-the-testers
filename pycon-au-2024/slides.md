@@ -565,15 +565,17 @@ Because there was a typo in the changes.
 The `database-test-job` ran, because there were changes to files ending in `.py`,
 But the `database-setup-job` didn't run, because there weren't changes to files ending in `.pu`.
 
+And the reason I give this example is because something similar happened to me!
+
 ------
 <!-- .slide: data-background-image="images/good_job.svg"-->
 
-Now it's great that we've figured out why this happened, and the fix would be a one character change,
+So, while it's great that we've figured out why this happened, and the fix would be a one character change,
 
 ------
 <!-- .slide: data-background-image="images/reflection.svg"-->
 
-But in our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
+In our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
 
 ------
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
