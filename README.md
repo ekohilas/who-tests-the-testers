@@ -8,7 +8,9 @@ Resources on the project can be found [here](https://github.com/ekohilas/ci-test
 
 | Conference | Slides | Video | Notes | Length | Year |
 |------------|:------:|:-----:|:-----:|-------:|-----:|
-| [PyCon AU](https://2024.pycon.org.au/program/NUUJAN/) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗]() | [🔗]() | 30 min | 2024 |
+| [PyCon AU](https://2024.pycon.org.au) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗](https://www.youtube.com/watch?v=ilfLFBacNj4) | [🔗](https://2024.pycon.org.au/program/NUUJAN) | 30 min | 2024 |
+| [PyCon US](https://2024.pycon.org.au/program/NUUJAN/) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗](https://www.youtube.com/@PyConUS/videos) | [🔗](https://us.pycon.org/2025/schedule/presentation/28/) | 30 min | 2025 |
+
 
 ### Abstract
 You likely have a good pipeline that either runs tests, lints, or deployments for your project.
