@@ -1,24 +1,28 @@
 <!-- .slide: data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
 
+Thank you!
+
+So to start with, can I get some noise from anyone else who thinks this is an awesome screensaver?
+
+Yeah! It's quite fitting for a pipelines talk isn't it?
+
 ------
 # Who Tests the Testers?<br>Making and Testing Pipelines
 <!-- .element: class="r-fit-text" -->
 ### Evan Kohilas
 ### `@ekohilas` - `nohumanerrors.com`
 
-Hey all!
-
-While working on the Platform team, I've developed on pipelines as part of a Gitlab repo to run tests for our codebase.
+Alright, [as you may have heard,] I'm Evan, and I've done a fair bit of platform software engineering to reduce human errors through working on pipelines to run tests for a codebase.
 
 ---
 <!-- .slide: data-background-image="images/oopsies.svg"-->
 
-However, I noticed there were quite a few, oops-ies, that were made, that could've been prevented if there were tests.
+However, I noticed that I, myself, made quite a few errors, that could've been prevented if there were tests.
 
 ------
 <!-- .slide: data-background-image="images/thinking.svg"-->
 
-And it got me thinking, if we as the Platform team help developers run tests for their codebase, who helps us, the platform team, write the tests for running the tests?
+And it got me thinking, if platform teams help engineers run tests for their codebase, who helps the platform teams, write the tests for running the tests?
 
 ------
 # 1. How to _make_ a pipeline
@@ -28,6 +32,7 @@ And it got me thinking, if we as the Platform team help developers run tests for
 # 3. How to _not_ break a pipeline
 <!-- .element: class="fragment" -->
 
+> TODO: better emphasis
 So today, we'll unpack that topic, in 3 easy steps.
 
 > Next slide
@@ -41,7 +46,7 @@ So today, we'll unpack that topic, in 3 easy steps.
 ---
 <!-- .element: data-background-image="images/raised_hands.svg"-->
 
-Alright, for this section,  could I please ask everyone to raise their hand.
+Alright, for this section, could I please ask everyone to raise their hand.
 
 We're gonna do a little survey.
 
@@ -111,7 +116,7 @@ with our final operation deploying this built and tested product.
 ------
 <!-- .slide: data-background-image="images/pipe_sparkles.svg"-->
 
-So Why are pipelines good?
+So why are pipelines good?
 
 ------
 <!-- .slide: data-background-image="images/pipe_shrug.svg"-->
@@ -143,12 +148,13 @@ that item, or in our case, some code, won't progress to the next stage, and thus
 ------
 <!-- .slide: data-background-image="images/gitlab_logo.svg"-->
 
-For this presentation, I'll be talking about Gitlab Pipelines
+In this presentation (if you hadn't noticed) examples will be taken from GitLab Pipelines
 
 ------
 <!-- .slide: data-background-image="images/github_logo.svg"-->
 
-however if you're a Github user, most of the content should be general enough to be applied, and additional resources will be given at the end.
+> TODO: Talk about microsoft pipelines
+however if you're a Github user, I've done my best to make most of the content general enough to be applicable, and additional resources will be given at the end.
 
 03:30 (02:00)
 
@@ -1699,6 +1705,7 @@ Question everything that is there, and utilise the least you can, to get the job
 ---
 <!-- .slide: data-background-image="images/feedback.svg"-->
 
+> TODO: Tie this in with questions?
 As always, I'm open to feedback, as I'm continuously striving to be better.
 
 ------
@@ -1718,7 +1725,7 @@ And, if you're still wondering who tests the testers, I'll be around for questio
 ------
 <!-- .slide: data-background-image="images/hearts.svg"-->
 
-Thank you to my friends, and family for supporting me, the open source contributors, finally to you, for listening!
+Thank you to my friends, and family for supporting me, the open source contributors, and finally to you, for listening!
 
 ------
 # `@ekohilas`
