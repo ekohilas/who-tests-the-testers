@@ -815,7 +815,11 @@ The core benefits of these tools are that they let us remove the dependency on g
 
 We might not want to spin up an entire pipeline just to run a single job.
 
+> TODO: Replace with drake rejecting gitlab meme
+
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
+
+> TODO: Drake accepting faster feedback loop?
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
@@ -996,6 +1000,8 @@ Well if we quote the library, we can utilise all the features of python such as:
 <!-- .slide: data-background-image="images/gcip_diagram_0.svg"-->
 
 The way that generated pipelines work, is that, in our ci config file, where we've been defining our testing jobs,
+
+> TODO: Cut this section if there isn't time?
 
 ------
 <!-- .slide: data-background-image="images/gcip_diagram_1.svg"-->
