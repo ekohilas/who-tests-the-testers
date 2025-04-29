@@ -1,8 +1,8 @@
 <!-- .slide: data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
 
-Thank you!
+Thank you! I'm so humbled to be back.
 
-So to start with, can I get some noise from anyone else who thinks this is an awesome screensaver?
+Alrighty then, to start with, can I get some noise from anyone else who thinks this is an awesome screensaver?
 
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
@@ -12,7 +12,7 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 ### Evan Kohilas
 ### `@ekohilas` - `nohumanerrors.com`
 
-Alright, [as you may have heard,] I'm Evan, and I've done a fair bit of platform software engineering to reduce human errors through working on pipelines to run tests for a codebase.
+So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
 
 ---
 <!-- .slide: data-background-image="images/oopsies.svg"-->
@@ -151,17 +151,16 @@ that item, or in our case, some code, won't progress to the next stage, and thus
 In this presentation (if you hadn't noticed) examples will be taken from GitLab Pipelines
 
 ------
-<!-- .slide: data-background-image="images/github_logo.svg"-->
+<!-- .slide: data-background-image="images/ci_logos.svg"-->
 
-> TODO: Talk about microsoft pipelines
-however if you're a Github user, I've done my best to make most of the content general enough to be applicable, and additional resources will be given at the end.
+however if you're a user of other CI tools, my goal is for the content to be general enough to be applicable, and for tools like GitHub Actions, additional resources will be given at the end.
 
 03:30 (02:00)
 
 ---
 <!-- .slide: data-background-image="images/gitlab_ci_yml.svg"-->
 
-to make a gitlab pipeline, we first need to create a `.gitlab-ci.yml` file, that gitlab will use as configuration. (That's kind of a mouth-full, so I'll refer to it as a ci config file from here on)
+So to make a gitlab pipeline, we first need to create a `.gitlab-ci.yml` file, that gitlab will use as configuration. (That's kind of a mouth-full, so I'll refer to it as a ci config file from here on)
 
 ------
 <!-- .slide: data-background-image="images/object_json_yaml.svg"-->
@@ -537,7 +536,9 @@ database-test-job:
 
 Can anyone tell me why it didn't run?
 
-Yes, thank you, that's right.
+> Feel free to shout out!
+> It might not have been very obvious... It's...
+> Yes, thank you, that's right.
 
 ------
 <!-- .element: data-auto-animate -->
@@ -586,20 +587,23 @@ In our line of work, it's more important to understand *how* this was allowed to
 ------
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
 
-So, can anyone think of some examples for why this could've happened?
+This next part might be hard but we're gonna try it.
+Can anyone shout out some examples for why this problem could've happened?
+
+> Yeah, it's a bit hard to hear you but I'll make some guesses
 
 - The author was careless
-- Or the reviewers weren't sharp enough
-- Or the config is too complex
-- Or it wasn't written well enough to avoid this using DRY
+- The reviewers weren't sharp enough
+- The config is too complex
+- It wasn't written using DRY
 
 > 09:35 (0:25)
 
 ------
 <!-- .slide: data-background-image="images/human_error.svg"-->
 
-But those are all human errors. 
-And as you might have heard earlier, I don't like human errors that could be avoided by a systematic change, which would allow us to blame a system instead of people.
+But to me, those are all human errors.
+And as you might have heard earlier, I don't like human errors, especially ones that could be avoided by a systematic change, which would allow us to blame a system instead of people.
 
 ------
 <!-- .slide: data-background-image="images/code.svg"-->
@@ -1702,12 +1706,6 @@ Question everything that is there, and utilise the least you can, to get the job
 
 25:45 (01:00)
 
----
-<!-- .slide: data-background-image="images/feedback.svg"-->
-
-> TODO: Tie this in with questions?
-As always, I'm open to feedback, as I'm continuously striving to be better.
-
 ------
 # `@ekohilas`
 # `citest.nohumanerrors.com`
@@ -1715,7 +1713,7 @@ As always, I'm open to feedback, as I'm continuously striving to be better.
 <!-- .element: class="r-stretch"-->
 # <br>
 
-You can find my contact, all related repos, tools, references, and sources at citest.nohumanerrors.com
+You can find all related repos, tools, references, sources, and me if you want to get in touch or give feedback, at citest.nohumanerrors.com
 
 ------
 <!-- .slide: data-background-image="images/questions.svg"-->
@@ -1734,6 +1732,6 @@ Thank you to my friends, and family for supporting me, the open source contribut
 <!-- .element: class="r-stretch"-->
 # Thanks!
 
-I'll leave this up now so you can actually take pictures
+I'll leave this up now so you can actually take pictures.
 
 26:15 (00:30)
