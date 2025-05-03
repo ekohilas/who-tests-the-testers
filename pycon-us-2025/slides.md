@@ -17,28 +17,46 @@ So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time 
 ---
 <!-- .slide: data-background-image="images/oopsies.svg"-->
 
-However, I noticed that I, myself, made quite a few errors, that could've been prevented if there were tests.
+However, I noticed that I, myself, made quite a few errors.
+
+---
+<!-- .slide: data-background-image="images/superhero.svg"-->
+
+And I don't say this because I think I'm this perfect person that should never make errors.
+
+---
+<!-- .slide: data-background-image="images/test.svg"-->
+
+But because it highlighted to me that these errors could've been prevented if there were tests.
+
+> More story, more why
+
+> More info about the problem you faced 
+> A lot of info but the point itself was small
+> A lot of ways to do things but the point was more about how to do it
+
+> What was the leading I had, make it more apparent that the outfit was the complexity
+> That's not to say that I'm an amazing programmer that never makes mistakes, that's what are for right?
 
 ------
 <!-- .slide: data-background-image="images/thinking.svg"-->
 
-And it got me thinking, if platform teams help engineers run tests for their codebase, who helps the platform teams, write the tests for running the tests?
+And so these events got me thinking. If platform teams can help engineers run tests, for their codebase, who helps the platform teams, write the tests for, running the tests?
 
 ------
-# 1. How to _make_ a pipeline
+# 1. How to <u>make</u> a pipeline
 <!-- .element: class="fragment" -->
-# 2. How to _break_ a pipeline
+# 2. How to <u>break</u> a pipeline
 <!-- .element: class="fragment" -->
-# 3. How to _not_ break a pipeline
+# 3. How to <u>not</u> break a pipeline
 <!-- .element: class="fragment" -->
 
-> TODO: better emphasis
-So today, we'll unpack that topic, in 3 easy steps.
+So today, we'll walk through this journey of mine, in 3 parts.
 
 > Next slide
 
 1. I'll briefly introduce what a pipeline is, and cover how to make one,
-2. show how they can break,
+2. show how I've found ways that they can break,
 3. and finally, deep dive into the methods to stop them from breaking.
 
 01:00 (01:00)
