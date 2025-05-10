@@ -887,7 +887,7 @@ So with the forth method, let's explore a different kind of testing.
 
 In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I begrudgingly made my own tool...
 
-> TODO: begrudgingly
+> TODO: replace begrudgingly
 > TODO: Simple but the idea is for it to be a framework 
 
 > More story, more why
