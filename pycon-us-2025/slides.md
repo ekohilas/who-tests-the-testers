@@ -29,15 +29,6 @@ And I don't say this because I think I'm this perfect person that should never m
 
 But because it highlighted to me that these errors could've been prevented if there were tests.
 
-> More story, more why
-
-> More info about the problem you faced 
-> A lot of info but the point itself was small
-> A lot of ways to do things but the point was more about how to do it
-
-> What was the leading I had, make it more apparent that the outfit was the complexity
-> That's not to say that I'm an amazing programmer that never makes mistakes, that's what are for right?
-
 ------
 <!-- .slide: data-background-image="images/thinking.svg"-->
 
@@ -161,24 +152,27 @@ If any stage of the factory line fails, like building or quality assurance,
 ------
 <!-- .slide: data-background-image="images/item_push.svg"-->
 
-that item, or in our case, some code, won't progress to the next stage, and thus won't be allowed to merge.
+that item, or in our case, some code, won't progress to the next stage, and thus won't be allowed to merge, or even deployed.
 
 ------
 <!-- .slide: data-background-image="images/gitlab_logo.svg"-->
 
-In this presentation (if you hadn't noticed) examples will be taken from GitLab Pipelines
+Now while my journey (if you hadn't noticed) takes place within GitLab Pipelines,
 
 ------
 <!-- .slide: data-background-image="images/ci_logos.svg"-->
 
-however if you're a user of other CI tools, my goal is for the content to be general enough to be applicable, and for tools like GitHub Actions, additional resources will be given at the end.
+don't fret if you're a user of other CI tools!
+My goal is for the ideas to be general enough to be applicable!
+And, for tools like GitHub Actions, additional resources will be given at the end.
 
 03:30 (02:00)
 
 ---
 <!-- .slide: data-background-image="images/gitlab_ci_yml.svg"-->
 
-So to make a gitlab pipeline, we first need to create a `.gitlab-ci.yml` file, that gitlab will use as configuration. (That's kind of a mouth-full, so I'll refer to it as a ci config file from here on)
+So the first part of this journey is making a gitlab pipeline.
+And to do so, we need to create a `.gitlab-ci.yml` file, that gitlab will use as configuration. (That's kind of a mouth-full, so I'll try to refer to it as a ci config file from here on)
 
 ------
 <!-- .slide: data-background-image="images/object_json_yaml.svg"-->
@@ -245,11 +239,11 @@ test-job:
 
 Of course this is probably the simplest pipeline we could create, and thus shouldn't be used as a reference.
 
-It's utilising a lot of what gitlab is offering by default, and we can get away with not having to install any packages as none are being used.
+This is because it's utilising a lot of what gitlab is offering by default, and we can get away with not having to install any packages as none are being used.
 
 So if you are looking for reference pipelines, I'll have some links in the resources at the end.
 
-That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline might, so let's extend it to do so.
+That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline that I've worked on might, so let's extend it to do so.
 
 ------
 <!-- .element: data-auto-animate -->
@@ -500,7 +494,10 @@ database-test-job:
 <!-- .element: data-id="simple-ci" -->
 
 And so now, what we've landed on is great.
-It's efficient as an example, and it works when it's merged in.
+
+It's similar enough as an example to what I was working with,
+
+And, it works when it's merged in!
 
 07:10 (03:40)
 
@@ -513,7 +510,7 @@ However as new PRs are made, and time goes on,
 <!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed.svg"-->
 
 one PR, causes the pipeline to fail.
-Not because the tests pass or fail,
+Not because the tests themselves pass or fail,
 
 ------
 <!-- .slide: data-background-image="images/pipeline_invalid.svg"-->
@@ -590,28 +587,37 @@ Because there was a typo in the changes.
 The `database-test-job` ran, because there were changes to files ending in `.py`,
 But the `database-setup-job` didn't run, because there weren't changes to files ending in `.pu`.
 
-And the reason I give this example is because something similar happened to me!
+------
+<!-- .slide: data-background-image="images/frustrated.svg"-->
+
+The reason I give this example is because this type of problem happened to me!
+And it left me feeling frustrated, and, dissapointed. Why?
+
+> TODO: why is that because it's time consuming, but only if it's complex
+> TODO: main point is that when something is very complex, time consuming problems emerge that need testing to prevent, when both could be avoided with simplicity
 
 ------
 <!-- .slide: data-background-image="images/good_job.svg"-->
 
-So, while it's great that we've figured out why this happened, and the fix would be a one character change,
+Well, while it's great that we've figured out why this happened, and that the fix would be a simple one character change,
 
 ------
 <!-- .slide: data-background-image="images/reflection.svg"-->
 
-In our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
+in our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
 
 ------
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
 
-This next part might be hard but we're gonna try it.
+For this, I'm gonna try hand it over back to you all!
 Can anyone shout out some examples for why this problem could've happened?
 
-> Yeah, it's a bit hard to hear you but I'll make some guesses
+> Okay I'll be honest, I didn't hear any of that. That is on me because I thought this might happen with so many of you here, but now can't blame myself for trying. So I've come prepared with some guesses to match what all of your awesome responses might be.
 
 - The author was careless
+- Incomplete or incompatible changes
 - The reviewers weren't sharp enough
+- Lack of testing
 - The config is too complex
 - It wasn't written using DRY
 
@@ -620,8 +626,8 @@ Can anyone shout out some examples for why this problem could've happened?
 ------
 <!-- .slide: data-background-image="images/human_error.svg"-->
 
-But to me, those are all human errors.
-And as you might have heard earlier, I don't like human errors, especially ones that could be avoided by a systematic change, which would allow us to blame a system instead of people.
+But to me, those are all human errors
+And as you might have heard earlier, I don't like human errors, *especially* ones that could be avoided by a systematic change, which would allow us to blame a system instead of people. This is why I was so frustrated.
 
 ------
 <!-- .slide: data-background-image="images/code.svg"-->
@@ -639,12 +645,19 @@ Because we're used to testing code with tests,
 
 but who tests the testing infrastructure with tests?
 
+Can I get a raise of hands?
+
+> See that's ? the audience!
+
 09:40 (02:30)
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
 
-So now you might be thinking, Evan, this is great insight, but solutions speak louder than problems, how do I stop this from happening to me?
+> TODO: Pick
+So now you might be thinking, Evan, I'm so sorry to hear that, it was such a touching story,
+So now you might be thinking, Evan, this is great insight,
+but solutions speak louder than problems, how do I stop this from happening to me?
 
 ------
 # 1. Configuration Linting <!-- .element: class="fragment" -->
@@ -653,15 +666,18 @@ So now you might be thinking, Evan, this is great insight, but solutions speak l
 # 4. Configuration Static Analysis Testing <!-- .element: class="fragment" -->
 # 5. Pipeline Generation Tooling <!-- .element: class="fragment" -->
 
+> TODO: Pick
+Thank you, it was difficult to share and I'm glad you asked because
+throughout that time, I was able to compose five techniques that helped me, which we'll dive into now.
 To answer that question, there's a couple of methods that we'll dive into:
 
 1. The first, is validating our ci configuration using linting tools
 2. The second, is running an end to end ci pipeline before comitting changes
 3. We'll then look at how we can run those pipeline jobs locally
-4. And, how we can run static analysis testing on the ci configuration
-5. Finally, we'll look at dynamically generating pipelines using tools
+4. How we can run static analysis testing on the ci configuration
+5. And finally, we'll look at dynamically generating pipelines using tools
 
-Now I won't claim that any single method is the best, but I'll cover the pros and cons to help you decide which one (or which combination) works best for you
+Now I won't claim that any single technique is the best. My goal is to cover the pros and cons so you decide which one (or which combination) works best in your situation.
 
 10:40 (01:00)
 
@@ -837,7 +853,7 @@ We might not want to spin up an entire pipeline just to run a single job.
 
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
 
-> TODO: Drake accepting faster feedback loop?
+> TODO: Drake accepting faster feedback loop? lightning mcqueen
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
@@ -870,6 +886,15 @@ So with the forth method, let's explore a different kind of testing.
 <!-- .slide: data-background-image="images/404.svg"-->
 
 In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I begrudgingly made my own tool...
+
+> TODO: begrudgingly
+> TODO: Simple but the idea is for it to be a framework 
+
+> More story, more why
+> More info about the problem you faced
+> A lot of info but the point itself was small
+> A lot of ways to do things but the point was more about how to do it
+> What was the learning I had, make it more apparent that the problem was the complexity
 
 ------
 <!-- .slide: data-background-image="images/ci_test.svg"-->
