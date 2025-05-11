@@ -591,10 +591,8 @@ But the `database-setup-job` didn't run, because there weren't changes to files 
 <!-- .slide: data-background-image="images/frustrated.svg"-->
 
 The reason I give this example is because this type of problem happened to me!
-And it left me feeling frustrated, and, dissapointed. Why?
-
-> TODO: why is that because it's time consuming, but only if it's complex
-> TODO: main point is that when something is very complex, time consuming problems emerge that need testing to prevent, when both could be avoided with simplicity
+And it left me feeling frustrated, and, dissapointed.
+And if this wasn't only because I had lost time, then why?
 
 ------
 <!-- .slide: data-background-image="images/good_job.svg"-->
@@ -647,17 +645,18 @@ but who tests the testing infrastructure with tests?
 
 Can I get a raise of hands?
 
-> See that's ? the audience!
+> See that's like ?% of the audience!
 
 09:40 (02:30)
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
 
-> TODO: Pick
-So now you might be thinking, Evan, I'm so sorry to hear that, it was such a touching story,
-So now you might be thinking, Evan, this is great insight,
-but solutions speak louder than problems, how do I stop this from happening to me?
+So now you might be thinking,  
+Evan, I'm so sorry to hear that,  
+it was such a touching story,  
+but solutions speak louder than problems,  
+how do I stop this from happening to me?
 
 ------
 # 1. Configuration Linting <!-- .element: class="fragment" -->
@@ -666,10 +665,11 @@ but solutions speak louder than problems, how do I stop this from happening to m
 # 4. Configuration Static Analysis Testing <!-- .element: class="fragment" -->
 # 5. Pipeline Generation Tooling <!-- .element: class="fragment" -->
 
-> TODO: Pick
-Thank you, it was difficult to share and I'm glad you asked because
-throughout that time, I was able to compose five techniques that helped me, which we'll dive into now.
-To answer that question, there's a couple of methods that we'll dive into:
+Thank you,  
+it was difficult to share and I'm glad you asked because 
+throughout that time,  
+I was able to compose five techniques that helped me,  
+which we'll dive into now:
 
 1. The first, is validating our ci configuration using linting tools
 2. The second, is running an end to end ci pipeline before comitting changes
@@ -738,7 +738,7 @@ However these methods have their downsides too:
 ------
 <!-- .slide: data-background-image="images/intellij_crossed.svg"-->
 
-The VSCode extension, as you might have guessed, is only for VSCode
+The VSCode extension, as you might have guessed, is only officially made for VSCode
 
 ------
 <!-- .slide: data-background-image="images/gitlab_pipeline_syntax_checker_success.svg"-->
@@ -835,12 +835,15 @@ gitlab dash ci dash local, is a typescript tool made by fire cow in January of 2
 
 And gitlabci dash local, is a python tool made by Adrian DC in January 2020.
 
+------
+<!-- .slide: data-background-image="images/bizzare.svg"-->
+
 Honestly it's bizarre how just how similar these tools are, both in what they do, and when they were made.
 
 ------
 <!-- .slide: data-background-image="images/gitlab-ci-local_output_and_gitlabci-local_output.svg"-->
 
-But anyways, these are two tools let us run the individual jobs of our gitlab pipelines, locally, using containers.
+But anyways, these two tools let us run the individual jobs of our gitlab pipelines, locally, using containers.
 
 ------
 <!-- .slide: data-background-image="images/gitlab_logo_crossed.svg"-->
@@ -849,11 +852,9 @@ The core benefits of these tools are that they let us remove the dependency on g
 
 We might not want to spin up an entire pipeline just to run a single job.
 
-> TODO: Replace with drake rejecting gitlab meme
-
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
 
-> TODO: Drake accepting faster feedback loop? lightning mcqueen
+> "images/drakeposting_gitlab_mcqueen.svg"
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
@@ -885,16 +886,7 @@ So with the forth method, let's explore a different kind of testing.
 ------
 <!-- .slide: data-background-image="images/404.svg"-->
 
-In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I begrudgingly made my own tool...
-
-> TODO: replace begrudgingly
-> TODO: Simple but the idea is for it to be a framework 
-
-> More story, more why
-> More info about the problem you faced
-> A lot of info but the point itself was small
-> A lot of ways to do things but the point was more about how to do it
-> What was the learning I had, make it more apparent that the problem was the complexity
+In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I took the initiative to make a tool myself...
 
 ------
 <!-- .slide: data-background-image="images/ci_test.svg"-->
@@ -981,7 +973,7 @@ Of course like everything else, it has it's drawbacks and can't solely be depend
 ------
 <!-- .slide: data-background-image="images/confidence.svg"-->
 
-But it will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
+But it is something simple, that will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
 
 ------
 <!-- .slide: data-background-image="images/notice_mark.svg"-->
@@ -1734,22 +1726,38 @@ Importantly, it's a choice that's up to you, your team, and, the situation.
 # 4. Configuration Static Analysis Testing
 # 5. Pipeline Generation Tooling
 
-So to close out, if we look back at our methods and ask, what is the best approach?
+So to close out, if we look back the techniques and ask, what is the best approach?
 
 Well, it really depends, on what your CI looks like.
 
-If your ci config file has become thousands of lines long, generating it dynamically, or writing tests may help relieve that burden.
+If your ci config file has become thousands of lines long, then generating it dynamically, or writing tests may help relieve that burden.
 
 But at the end of the day, all these methods, are only tools to assist us in our problems,
 
-And if the underlying problem is the thousands of lines of CI configuration, it might help to start there instead.
+------
+<!-- .slide: data-background-image="images/complex_pipes.svg"-->
+
+And if the underlying problem is the thousands of lines of CI configuration, it might help to start there instead,
+
+because as complexity increases, so too, do time consuming problems that require testing to prevent.   
+
+Choosing one tool, over another, will _still_ be adding another component, to something that is likely already complex, that, you'll later have to deal with.
+
+------
+```yaml[]
+# .gitlab-ci.yml
+image: python:latest
+
+test-job:
+    script: "python test.py"
+```
+
+And so if your pipeline is as simple as this, it may very well be reasonable to need nothing at all. 
 
 ------
 <!-- .slide: data-background-image="images/simplicity.svg"-->
 
 Thus, my view from all of this is that simplicity is key.
-
-Choosing one tool, over another, will _still_ be adding another component, to something that is likely already complex, that, you'll later have to deal with.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
