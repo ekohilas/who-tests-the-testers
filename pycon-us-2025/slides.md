@@ -828,7 +828,7 @@ Yes you heard me right, the difference is a dash…
 ------
 <!-- .slide: data-background-image="images/gitlab-ci-local.svg"-->
 
-gitlab dash ci dash local, is a typescript tool made by fire cow in January of 2020
+gitlab dash ci dash local, is a typescript tool made by Mads Jon Nielsen in January of 2020
 
 ------
 <!-- .slide: data-background-image="images/gitlabci-local.svg"-->
