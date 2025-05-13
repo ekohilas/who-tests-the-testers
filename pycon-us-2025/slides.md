@@ -199,7 +199,7 @@ image: python:latest
 ```
 <!-- .element: data-id="simple-ci" -->
 
-Here we define that we want the job to run with a docker image that contains the latest version of python.
+Here we define that we want jobs to run with a docker image that contains the latest version of python.
 
 ------
 <!-- .element: data-auto-animate -->
