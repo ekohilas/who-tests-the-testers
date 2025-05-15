@@ -1031,54 +1031,16 @@ Well if we quote the library, we can utilise all the features of python such as:
 * packaging
 * and anything else you can imagine!
 
-------
-<!-- .slide: data-background-image="images/gcip_diagram_0.svg"-->
-
-The way that generated pipelines work, is that, in our ci config file, where we've been defining our testing jobs,
-
-> TODO: Cut this section if there isn't time?
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_1.svg"-->
-
-we instead define a generate pipeline job,
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_2.svg"-->
-
-which runs our python ci config file,
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_3.svg"-->
-
-to create a generated config ci file, that contains all of the previous jobs that we want to run.
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_4.svg"-->
-
-The original ci config file had also defined a run pipeline job,
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_5.svg"-->
-
-that, has a needs on the generate pipeline job,
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_6.svg"-->
-
-as it uses, the generated ci config file,
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_7.svg"-->
-
-to create a child pipeline that runs all of the previous jobs that we wanted to run.
-
-------
-<!-- .slide: data-background-image="images/gcip_diagram_8.svg"-->
-
-This is great because it means we replace writing yaml with python!
+> TODO: Update timing
 
 21:05 (02:05)
+
+------
+<!-- .slide: data-background-image="images/python_not_yaml.svg"-->
+
+So what would it look like to replace our yaml with python?
+
+> TODO: Create image 
 
 ---
 <!-- .element: data-auto-animate -->
@@ -1087,7 +1049,7 @@ This is great because it means we replace writing yaml with python!
 ```
 <!-- .element: data-id="python-ci" -->
 
-So if we want to replicate what we had before, our python ci config file would look like this
+Well first we create a `.gitlab-ci.py` file,
 
 ------
 <!-- .element: data-auto-animate -->
@@ -1097,7 +1059,7 @@ import gcip
 ```
 <!-- .element: data-id="python-ci" -->
 
-we import the library,
+then import the library,
 
 ------
 <!-- .element: data-auto-animate -->
