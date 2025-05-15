@@ -800,7 +800,7 @@ And therefore, we won't be able to catch our problem, as our branch doesn't intr
 ------
 <!-- .slide: data-background-image="images/branch_with_changes_diagram.svg"-->
 
-However there is another way, and that is by creating a branch off of our ci config file changes, with the changes that are needed, such as changing a file that we expect to run in the test directory.
+However there is another way, and that is by creating a branch off of our new ci config file, with any changes that are needed, such as updating a file that we expect to run in the test directory.
 
 ------
 <!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed_pipeline.svg"-->
