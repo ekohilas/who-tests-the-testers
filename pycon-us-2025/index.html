@@ -51,7 +51,7 @@
 				showSlideNumber: 'all',
 				showNotes: true,
 			};
-			const presenting = false;
+			const presenting = true;
 			const additionalConfig = presenting ? presentingConfig : displayConfig;
 
 			Reveal.initialize({
@@ -69,7 +69,7 @@
 						
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-		});
+			});
 		</script>
 
 		<link rel="stylesheet" href="../src/css/reveal-override.css">
