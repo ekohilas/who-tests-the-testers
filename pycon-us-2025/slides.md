@@ -854,7 +854,8 @@ We might not want to spin up an entire pipeline just to run a single job.
 
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
 
-> "images/drakeposting_gitlab_mcqueen.svg"
+> TODO: "images/drakeposting_gitlab_mcqueen.svg"
+> TODO: Mufasa meme?
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
