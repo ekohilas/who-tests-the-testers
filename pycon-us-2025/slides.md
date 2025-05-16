@@ -19,12 +19,12 @@ So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time 
 
 However, I noticed that I, myself, made quite a few errors.
 
----
+------
 <!-- .slide: data-background-image="images/superhero.svg"-->
 
 And I don't say this because I think I'm this perfect person that should never make errors.
 
----
+------
 <!-- .slide: data-background-image="images/test.svg"-->
 
 But because it highlighted to me that these errors could've been prevented if there were tests.
