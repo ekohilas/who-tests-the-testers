@@ -50,7 +50,7 @@ So today, we'll walk through this journey of mine, in 3 parts.
 2. show how I've found ways that they can break,
 3. and finally, deep dive into the methods to stop them from breaking.
 
-01:30 (01:30) {1}
+> > 01:30 (01:30) {1}
 
 ---
 <!-- .element: data-background-image="images/raised_hands.svg"-->
@@ -89,7 +89,7 @@ if you've had a pipeline that you've written fail on you.
 
 Wow x of you.
 
-02:30 (01:00) {2}
+> 02:30 (01:00) {2}
 
 ---
 <!-- .slide: data-background-image="images/full_pipeline.svg"-->
@@ -166,7 +166,7 @@ don't fret if you're a user of other CI tools!
 My goal is for the ideas to be general enough to be applicable!
 And, for tools like GitHub Actions, additional resources will be given at the end.
 
-04:00 (01:30) {3}
+> 04:00 (01:30) {3}
 
 ---
 <!-- .slide: data-background-image="images/gitlab_ci_yml.svg"-->
@@ -499,7 +499,7 @@ It's similar enough as an example to what I was working with,
 
 And, it works when it's merged in!
 
-07:40 (03:40) {4}
+> 07:40 (03:40) {4}
 
 ---
 <!-- .slide: data-background-image="images/prs_and_time.svg"-->
@@ -621,7 +621,7 @@ Can anyone shout out some examples for why this problem could've happened?
 - The config is too complex
 - It wasn't written using DRY
 
-10:10 (2:30) {5}
+> 10:10 (2:30) {5}
 
 ------
 <!-- .slide: data-background-image="images/human_error.svg"-->
@@ -649,7 +649,7 @@ Can I get a raise of hands?
 
 > See that's like ?% of the audience!
 
-10:55 (0:45) {6}
+> 10:55 (0:45) {6}
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
@@ -681,7 +681,7 @@ which we'll dive into now:
 
 Now I won't claim that any single technique is the best. My goal is to cover the pros and cons to help you decide which one (or which combination) works best in your situation.
 
-12:10 (01:15) {7}
+> 12:10 (01:15) {7}
 
 ---
 # 1. Configuration Linting
@@ -767,7 +767,7 @@ And with the full configuration tool, expansion is limited, and won't expand out
 
 So while linting tools do have their use, they are only a single piece of the puzzle, just like how we can't expect linters to catch logic errors.
 
-14:40 (2:30) {8}
+> 14:40 (2:30) {8}
 
 ---
 # 2. Running End to End Pipelines
@@ -814,7 +814,7 @@ This is great, as it would reveal our problem,
 
 However, you may have noticed that this is an intensive and costly process, as it's slow and manual, and may not scale with all of the combinations of changes, that may be introduced with lots of different rules.
 
-16:20 (01:40) {9}
+> 16:20 (01:40) {9}
 
 ---
 # 3. Running Pipelines Locally
@@ -878,7 +878,7 @@ And if we're solely testing our pipeline changes, they don't give us any static 
 
 So in our examples above, both of these tools also won't help us uncover our problem, even though they might have other benefits.
 
-18:20 (02:00) {10}
+> 18:20 (02:00) {10}
 
 ---
 # 4. Configuration Static Analysis Testing
@@ -991,7 +991,7 @@ So, if you want to help contribute to this, or, any other developer tooling, I'm
 
 Reach out, make a pull request on GitHub, or, come to the sprints!
 
-20:20 (02:00) {11}
+> 20:20 (02:00) {11}
 
 ---
 # 5. Pipeline Generation Tooling
@@ -1033,7 +1033,7 @@ Well if we quote the library, we can utilise all the features of python such as:
 * packaging
 * and anything else you can imagine!
 
-21:30 (01:10) {12}
+> 21:30 (01:10) {12}
 
 ------
 <!-- .slide: data-background-image="images/python_not_yaml.svg"-->
@@ -1336,7 +1336,7 @@ However, has this caused our initial problem to go away?
 
 Well, it doesn't give us any protections from the pipeline failing to run, because again, there were no reasons for it to run correctly, since there were no `.pu` changes.
 
-22:45 (01:15) {13}
+> 22:45 (01:15) {13}
 
 ---
 <!-- .slide: data-background-image="images/dissappointed.svg"-->
@@ -1649,7 +1649,7 @@ Well that's not entirely correct, gitlab does allow you to merge lists,
 
 However this doesn't work for all cases, as it won't result in valid yaml.
 
-24:15 (01:30) {14}
+> 24:15 (01:30) {14}
 
 ---
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
@@ -1677,7 +1677,7 @@ maybe writing them in code is cleaner.
 
 Importantly, it's a choice that's up to you, your team, and, the situation.
 
-25:00 (00:45) {15}
+> 25:00 (00:45) {15}
 
 ---
 # 1. Configuration Linting
@@ -1721,7 +1721,7 @@ Thus, my view from all of this is that simplicity is key.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
-26:30 (01:30) {16}
+> 26:30 (01:30) {16}
 
 ------
 # `@ekohilas`
@@ -1751,4 +1751,4 @@ Thank you to my friends, and family for supporting me, the open source contribut
 
 I'll leave this up now so you can actually take pictures.
 
-27:00 (00:30) {17}
+> 27:00 (00:30) {17}
