@@ -552,7 +552,9 @@ database-test-job:
 Can anyone tell me why it didn't run?
 
 > Feel free to shout out!
-> It might not have been very obvious... It's...
+
+> [It might not have been very obvious... It's...]
+
 > Yes, thank you, that's right.
 
 ------
@@ -590,7 +592,7 @@ But the `database-setup-job` didn't run, because there weren't changes to files 
 ------
 <!-- .slide: data-background-image="images/frustrated.svg"-->
 
-The reason I give this example is because this type of problem happened to me!
+The reason I give this example is because it's a type of problem I've personally experienced!
 And it left me feeling frustrated, and, dissapointed.
 And if this wasn't only because I had lost time, then why?
 
@@ -677,7 +679,7 @@ which we'll dive into now:
 4. How we can run static analysis testing on the ci configuration
 5. And finally, we'll look at dynamically generating pipelines using tools
 
-Now I won't claim that any single technique is the best. My goal is to cover the pros and cons so you decide which one (or which combination) works best in your situation.
+Now I won't claim that any single technique is the best. My goal is to cover the pros and cons to help you decide which one (or which combination) works best in your situation.
 
 10:40 (01:00)
 
@@ -689,7 +691,7 @@ So the first method that we'll dive into is linting the ci config file.
 ------
 <!-- .slide: data-background-image="images/lint.svg"-->
 
-Linting is great, because it's a fast method of finding problems that can be solved before going further.
+Linting is great. I **love** linting, because it's a fast method of finding (and sometimes automatically fixing), problems that can be solved before going further.
 And gitlab offers quite a bit here:
 
 ------
@@ -854,8 +856,7 @@ We might not want to spin up an entire pipeline just to run a single job.
 
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
 
-> TODO: "images/drakeposting_gitlab_mcqueen.svg"
-> TODO: Mufasa meme?
+> TODO: Replace image with fitting meme like "Long live the king?" 
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
