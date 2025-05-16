@@ -1042,8 +1042,6 @@ Well if we quote the library, we can utilise all the features of python such as:
 
 So what would it look like to replace our yaml with python?
 
-> TODO: Create image 
-
 ---
 <!-- .element: data-auto-animate -->
 ```python[1]
