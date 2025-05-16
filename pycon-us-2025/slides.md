@@ -245,6 +245,8 @@ So if you are looking for reference pipelines, I'll have some links in the resou
 
 That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline that I've worked on might, so let's extend it to do so.
 
+> TODO: Emphasise that this is an example for an error
+
 ------
 <!-- .element: data-auto-animate -->
 ```yaml[6]
