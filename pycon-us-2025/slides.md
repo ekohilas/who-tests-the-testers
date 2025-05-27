@@ -10,7 +10,8 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 # Who Tests the Testers?<br>Making and Testing Pipelines
 <!-- .element: class="r-fit-text" -->
 ### Evan Kohilas
-### `@ekohilas` - `nohumanerrors.com`
+### `@ekohilas`
+### `nohumanerrors.com`
 
 So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
 
