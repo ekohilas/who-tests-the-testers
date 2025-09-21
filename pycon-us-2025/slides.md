@@ -1,4 +1,4 @@
-<!-- .slide: data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
+<!-- .slide: data-timing="30" data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
 
 Thank you! I'm so humbled to be back.
 
@@ -7,6 +7,7 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
 ------
+<!-- .slide: data-timing="20" -->
 # Who Tests the Testers?<br>Making and Testing Pipelines
 <!-- .element: class="r-fit-text" -->
 ### Evan Kohilas
@@ -16,7 +17,7 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
 
 ---
-<!-- .slide: data-background-image="images/oopsies.svg"-->
+<!-- .slide: data-timing="10" data-background-image="images/oopsies.svg"-->
 
 However, I noticed that I, myself, made quite a few errors.
 
