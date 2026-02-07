@@ -8,8 +8,9 @@ Resources on the project can be found [here](https://github.com/ekohilas/ci-test
 
 | Conference | Slides | Video | Notes | Length | Year |
 |------------|:------:|:-----:|:-----:|-------:|-----:|
-| [PyCon AU](https://2024.pycon.org.au) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗](https://www.youtube.com/watch?v=ilfLFBacNj4) | [🔗](https://2024.pycon.org.au/program/NUUJAN) | 30 min | 2024 |
+| [DDD Melbourne](https://www.dddmelbourne.com/) | [🔗](https://ekohilas.github.io/who-tests-the-testers/ddd-melbourne-2026) | [🔗](https://www.youtube.com/@ekohilas) | [🔗](https://www.dddmelbourne.com/agenda?sessionId=72e118f7-ba36-4e3c-887c-e01dad6a5adc) | 45 min | 2026 |
 | [PyCon US](https://us.pycon.org/2025) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-us-2025) | [🔗](https://www.youtube.com/@PyConUS/videos) | [🔗](https://us.pycon.org/2025/schedule/presentation/28/) | 30 min | 2025 |
+| [PyCon AU](https://2024.pycon.org.au) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗](https://www.youtube.com/watch?v=ilfLFBacNj4) | [🔗](https://2024.pycon.org.au/program/NUUJAN) | 30 min | 2024 |
 
 
 ### Abstract
