@@ -1,10 +1,14 @@
 <!-- .slide: data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
 
-Thank you! I'm so humbled to be back.
+Thank you! I'm so humbled to be speaking at DDD! 
 
 Alrighty then, to start with, can I get some noise from anyone else who thinks this is an awesome screensaver?
 
 Yeah! It's quite fitting for a pipelines talk isn't it?
+
+> TODO: Remove Python?
+> TODO: Talk about cog
+> TODO: Talk about how it was used for safe refactoring
 
 ------
 # Who Tests the Testers?<br>Making and Testing Pipelines
@@ -141,7 +145,7 @@ Well, they allow us in one case, to create a streamlined process that automates 
 ------
 <!-- .slide: data-background-image="images/quality_control.svg"-->
 
-And in other cases, they can act a quality control.
+And in other cases, they can act as a quality control.
 
 This is similar to a factory line.
 
@@ -178,7 +182,7 @@ And to do so, we need to create a `.gitlab-ci.yml` file, that gitlab will use as
 ------
 <!-- .slide: data-background-image="images/object_json_yaml.svg"-->
 
-If you're new to yaml, think of it as a way to store dictionaries and lists. similar to json, but more human friendly.
+If you're new to yaml, think of it as a way to store maps and lists. similar to json, but more human friendly.
 
 https://carbon.now.sh/?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=application%2Fjson&width=680&ds=true&dsyoff=20px&dsblur=25px&wc=true&wa=true&pv=51px&ph=64px&ln=false&fl=1&fm=Source+Code+Pro&fs=18px&lh=133%25&si=false&es=4x&wm=false&code=%257B%250A%2520%2520%2522object%2522%253A%2520%257B%250A%2520%2520%2520%2520%2522key%2522%253A%2520%2522value%2522%252C%250A%2520%2520%2520%2520%2522array%2522%253A%2520%255B1%252C%2520false%255D%250A%2520%2520%257D%250A%257D%250A
 https://carbon.now.sh/?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=yaml&width=680&ds=true&dsyoff=20px&dsblur=25px&wc=true&wa=true&pv=51px&ph=64px&ln=false&fl=1&fm=Source+Code+Pro&fs=18px&lh=133%25&si=false&es=4x&wm=false&code=object%253A%250A%2520%2520key%253A%2520value%2520%250A%2520%2520array%253A%250A%2520%2520%2520%2520-%25201%250A%2520%2520%2520%2520-%2520false%250A
@@ -190,7 +194,7 @@ https://carbon.now.sh/?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=ya
 ```
 <!-- .element: data-id="simple-ci" -->
 
-We'll make a simple one now, that one can use on their python repo to ensure tests pass before merging
+We'll make a simple one now, that one can use on their repo to ensure tests pass before merging
 
 ------
 <!-- .element: data-auto-animate -->
@@ -200,7 +204,8 @@ image: python:latest
 ```
 <!-- .element: data-id="simple-ci" -->
 
-Here we define that we want jobs to run with a docker image that contains the latest version of python.
+Here we define that we want jobs to run with a docker image that contains the latest version of your programming language of choice, which for this talk, will be python.
+
 
 ------
 <!-- .element: data-auto-animate -->
@@ -591,6 +596,8 @@ database-test-job:
 Because there was a typo in the changes.
 The `database-test-job` ran, because there were changes to files ending in `.py`,
 But the `database-setup-job` didn't run, because there weren't changes to files ending in `.pu`.
+
+> TODO: Emphasize the example is to show what goes wrong regardless of how simple the setup is.
 
 ------
 <!-- .slide: data-background-image="images/frustrated.svg"-->
@@ -992,7 +999,7 @@ There is plenty of room for improvement, and it's been written in a way to be hi
 
 So, if you want to help contribute to this, or, any other developer tooling, I'm more than happy to help!
 
-Reach out, make a pull request on GitHub, or, come to the sprints!
+Reach out, or make a pull request on GitHub!
 
 > 20:20 (02:00) {11}
 
