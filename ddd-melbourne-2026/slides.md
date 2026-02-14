@@ -7,8 +7,8 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
 > TODO: Remove Python?
-> TODO: Talk about cog
 > TODO: Talk about how it was used for safe refactoring
+> TODO: Bring back generated pipelines explanation to fill time
 
 ------
 # Who Tests the Testers?<br>Making and Testing Pipelines
@@ -1688,6 +1688,370 @@ maybe writing them in code is cleaner.
 Importantly, it's a choice that's up to you, your team, and, the situation.
 
 > 25:00 (00:45) {15}
+
+---
+<!-- .slide: data-background-image="images/thinking.svg"-->
+
+If you do see the need to integrate some kind of programming in your configuration, but feel like pipeline generation is too much, there is one other approach to consider.
+
+------
+<!-- .slide: data-background-image="images/cog.png"-->
+
+And that is using Cog.
+
+Cog is a tool that allows you to use small bits of Python code in static files to generate the text that you need.
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [1,8,14]
+# .gitlab-ci.yml
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.pu"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+So in our previous example where we wanted to unify these as a list... 
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [2-4]
+# .gitlab-ci.yml
+#[[[cog
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+We would first create a comment with a cog block
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [3-4]
+# .gitlab-ci.yml
+#[[[cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+Add a python function to specify our changes
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [3]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+import cog, ...
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [6-7]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+To output the changes on iteration
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [16-17]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+And then where we've defined our changes,
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [16-18]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            #[[[end]]]
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            #[[[end]]]
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            #[[[end]]]
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+we can use cog to run that function to output the change list.
+
+Then, when we run cog over the file,
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [16-18]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+It'll update what's between the tags with our generated output.
+
+And because it works on the file itself, there's no guessing what the generation will do. 
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [19]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+            - "**/tests/**"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+```
+<!-- .element: data-id="yaml-changeset" -->
+
+Meaning that extending our list for one particular case is both easy to do and understand!
+
+> XX:XX (1:30) {X}
 
 ---
 # 1. Configuration Linting
