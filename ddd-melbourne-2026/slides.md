@@ -2237,9 +2237,12 @@ You can find all related repos, tools, references, sources, and me if you want t
 And, if you're still wondering who tests the testers, I'll be around for questions!
 
 ------
-<!-- .slide: data-background-image="images/hearts.svg"-->
+<!-- .slide: data-background-image="images/ddd_sponsors.png"-->
 
-Thank you to my friends, and family for supporting me, the open source contributors, and finally to you, for listening!
+Thanks to all the sponsors of DDD for bringing us all together,
+my friends and family for supporting me,
+the open source contributors,
+and finally to you, for listening!
 
 ------
 # `@ekohilas`
