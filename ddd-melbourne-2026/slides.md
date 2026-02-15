@@ -7,8 +7,6 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
 > TODO: Update bio?
-> TODO: Update self outro
-> TODO: Talk about how it was used for safe refactoring
 > TODO: Bring back generated pipelines explanation to fill time
 
 ------
@@ -2346,7 +2344,15 @@ Question everything that is there, and utilise the least you can, to get the job
 <!-- .element: class="r-stretch"-->
 # <br>
 
-You can find all related repos, tools, references, sources, and me if you want to get in touch or give feedback, at citest.nohumanerrors.com
+If you're after the resources from this talk, you can find them in these links.
+
+And if any of this was of interest to you, reach out!
+
+I'm looking for my next engagement and would love to work with you on solving complex problems. 
+
+If you enjoyed this talk, please take a picture to share it online.
+
+You can also subscribe to my mailing list on nohumanerrors.com, or find me online at ekohilas if you want to get in touch or give feedback.  
 
 ------
 <!-- .slide: data-background-image="images/questions.svg"-->
