@@ -2051,7 +2051,7 @@ database-test-job:
 
 Meaning that extending our list for one particular case is both easy to do and understand!
 
-> XX:XX (1:30) {X}
+> 26:30 (1:30) {16}
 
 ---
 <!-- .element: data-auto-animate -->
@@ -2175,7 +2175,7 @@ Check failed
 
 Or using the check and diff flags within a CI job before the PR is merged, which will error highlighting that an unexpected change has been made.
 
-> XX:XX (00:30) {}
+> 27:00 (00:30) {17}
 
 
 ---
@@ -2220,7 +2220,7 @@ Thus, my view from all of this is that simplicity is key.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
-> 26:30 (01:30) {16}
+> 28:30 (01:30) {18}
 
 ------
 # `@ekohilas`
@@ -2250,4 +2250,4 @@ Thank you to my friends, and family for supporting me, the open source contribut
 
 I'll leave this up now so you can actually take pictures.
 
-> 27:00 (00:30) {17}
+> 29:00 (00:30) {19}
