@@ -251,8 +251,6 @@ So if you are looking for reference pipelines, I'll have some links in the resou
 
 That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline that I've worked on might, so let's extend it to do so.
 
-> TODO: Emphasise that this is an example for an error
-
 ------
 <!-- .element: data-auto-animate -->
 ```yaml[6]
@@ -597,12 +595,12 @@ Because there was a typo in the changes.
 The `database-test-job` ran, because there were changes to files ending in `.py`,
 But the `database-setup-job` didn't run, because there weren't changes to files ending in `.pu`.
 
-> TODO: Emphasize the example is to show what goes wrong regardless of how simple the setup is.
+Now of course, this is only an example to show what can go wrong regardless of how simple your setup could be.
 
 ------
 <!-- .slide: data-background-image="images/frustrated.svg"-->
 
-The reason I give this example is because it's a type of problem I've personally experienced!
+But the reason I give this example is because it's a type of problem I've personally experienced!
 And it left me feeling frustrated, and, dissapointed.
 And if this wasn't only because I had lost time, then why?
 
