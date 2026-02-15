@@ -8,6 +8,7 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 
 > TODO: Update bio?
 > TODO: Bring back generated pipelines explanation to fill time
+> TODO: Dry run with timings.
 
 ------
 # Who Tests the Testers?<br>Making and Testing Pipelines
