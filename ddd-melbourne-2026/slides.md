@@ -601,7 +601,7 @@ Now of course, this is only an example to show what can go wrong regardless of h
 <!-- .slide: data-background-image="images/frustrated.svg"-->
 
 But the reason I give this example is because it's a type of problem I've personally experienced!
-And it left me feeling frustrated, and, dissapointed.
+And it left me feeling frustrated, and, disappointed.
 And if this wasn't only because I had lost time, then why?
 
 ------
@@ -682,7 +682,7 @@ I was able to compose five techniques that helped me,
 which we'll dive into now:
 
 1. The first, is validating our ci configuration using linting tools
-2. The second, is running an end to end ci pipeline before comitting changes
+2. The second, is running an end to end ci pipeline before committing changes
 3. We'll then look at how we can run those pipeline jobs locally
 4. How we can run static analysis testing on the ci configuration
 5. And finally, we'll look at dynamically generating pipelines using tools
@@ -846,7 +846,7 @@ gitlab dash ci dash local, is a typescript tool made by Mads Jon Nielsen (Mass Y
 And gitlabci dash local, is a python tool made by Adrian DC in January 2020.
 
 ------
-<!-- .slide: data-background-image="images/bizzare.svg"-->
+<!-- .slide: data-background-image="images/bizarre.svg"-->
 
 Honestly it's bizarre how just how similar these tools are, both in what they do, and when they were made.
 
@@ -1464,7 +1464,7 @@ Well, it doesn't give us any protections from the pipeline failing to run, becau
 > 25:00 (01:15) {15}
 
 ---
-<!-- .slide: data-background-image="images/dissappointed.svg"-->
+<!-- .slide: data-background-image="images/disappointed.svg"-->
 
 So unfortunately, it seems like generated pipelines won't directly solve our problem.
 
