@@ -6,7 +6,8 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
-> TODO: Remove Python?
+> TODO: Update bio?
+> TODO: Update self outro
 > TODO: Talk about how it was used for safe refactoring
 > TODO: Bring back generated pipelines explanation to fill time
 
