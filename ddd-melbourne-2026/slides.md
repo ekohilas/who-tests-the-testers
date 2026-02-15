@@ -2054,6 +2054,131 @@ Meaning that extending our list for one particular case is both easy to do and u
 > XX:XX (1:30) {X}
 
 ---
+<!-- .element: data-auto-animate -->
+```yaml [17]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]]
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.pu"
+            #[[[end]]]
+            - "**/tests/**"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]]
+```
+<!-- .element: data-id="yaml-changeset-edit" -->
+
+If you're wondering "What if someone accidentally changes what's between the tags?" 
+
+Then there's a couple of options you have to protect your platform.
+
+
+------
+<!-- .element: data-auto-animate -->
+```yaml [18]
+# .gitlab-ci.yml
+#[[[cog
+# import cog
+# def app_changelist():
+#     changes = ["**/*.py"]
+#     for change in changes:
+#         cog.outl(f'- "{change}"')
+#]]]
+#[[[end]]] (sum: 1B2M2Y8Asg)
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.pu"
+            #[[[end]]] (sum: KXQVeDRZak)
+            - "**/tests/**"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]] (sum: KXQVeDRZak)
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            #[[[cog app_changelist()]]]
+            - "**/*.py"
+            #[[[end]]] (sum: KXQVeDRZak)
+```
+<!-- .element: data-id="yaml-changeset-edit" -->
+
+Such as enabling the checksum flag, which, when running cog...
+
+------
+``` sh
+.gitlab-ci.yml(18):
+    Output has been edited!
+    Delete old checksum to unprotect.
+```
+
+will cause it to complain about an unexpected edit.
+
+------
+```diff [2,9-10,14]
+-diff .gitlab-ci.cog.yml
+Checking .gitlab-ci.cog.yml  (changed)
+--- current .gitlab-ci.cog.yml
++++ changed .gitlab-ci.cog.yml
+@@ -14,7 +14,7 @@
+     rules:
+         - changes:
+             #[[[cog app_changelist()]]]
+-            - "**/*.pu"
++            - "**/*.py"
+             #[[[end]]]
+             - "**/tests/**"
+ 
+Check failed
+```
+
+Or using the check and diff flags within a CI job before the PR is merged, which will error highlighting that an unexpected change has been made.
+
+> XX:XX (00:30) {}
+
+
+---
 # 1. Configuration Linting
 # 2. Running End to End Pipelines
 # 3. Running Pipelines Locally
