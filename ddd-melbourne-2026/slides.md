@@ -988,10 +988,123 @@ Of course like everything else, it has it's drawbacks and can't solely be depend
 
 But it is something simple, that will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
 
+---
+<!-- .slide: data-background-image="images/ci_test_refactor_0.svg"-->
+
+And it's true value was highlighted in one of my previous engagements.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_1.svg"-->
+
+Their CI config file,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_2.svg"-->
+
+was thousands of lines of unmaintainable yaml,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_3.svg"-->
+
+And no one wanted to make CI changes.
+
+If they needed to, the pipelines had to be baby sat,
+for the case where, not if,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_4.svg"-->
+
+but when, something unexpected would go wrong.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_5.svg"-->
+
+This giant file handled deployments and everything else.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_6.svg"-->
+
+And it was scary because if you wanted to make changes to merges,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_7.svg"-->
+
+you didn't know if you'd be affecting deployments.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_8.svg"-->
+
+Now because ci test is able to take snapshots to show what's changed, you could then do something clever.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_9.svg"-->
+
+Say the config file is full of changes related to deployment, and everything else.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_10.svg"-->
+
+And you wanted to refactor it to extract out all the changes related to deployment.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_11.svg"-->
+
+First, what you would do, is make two copies of the config file.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_12.svg"-->
+
+One to contain everything related to deployments,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_13.svg"-->
+
+and the other, everything not related.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_14.svg"-->
+
+Then you'd reduce the original config
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_15.svg"-->
+
+to include these files based on the workflow.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_16.svg"-->
+
+Importantly at this step, when ci test takes a snapshot, the expected output will be the same.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_17.svg"-->
+
+But now, ci test can be configured to take different snapshots, such as for the non deploy path,
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_18.svg"-->
+
+or for the deploy path.
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_19.svg"-->
+
+So now, if we want to refactor the two different configs, 
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_20.svg"-->
+
+Removing anything that's unnecessary...
+
+------
+<!-- .slide: data-background-image="images/ci_test_refactor_21.svg"-->
+
+the tests, (or in this case the output jobs,) don't change, signalling a safe refactor.
+
 ------
 <!-- .slide: data-background-image="images/notice_mark.svg"-->
 
-That being said, don't take that as me going on the record to say that this will be the holy grail.
+That all being said, don't take that as me going on the record to say that this will be the holy grail.
 
 ------
 <!-- .slide: data-background-image="images/contribute.svg"-->
