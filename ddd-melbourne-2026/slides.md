@@ -988,6 +988,8 @@ Of course like everything else, it has it's drawbacks and can't solely be depend
 
 But it is something simple, that will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
 
+> 19:50 (01:30) {11}
+
 ---
 <!-- .slide: data-background-image="images/ci_test_refactor_0.svg"-->
 
@@ -1101,6 +1103,8 @@ Removing anything that's unnecessary...
 
 the tests, (or in this case the output jobs,) don't change, signalling a safe refactor.
 
+> 22:05 (02:15) {12}
+
 ------
 <!-- .slide: data-background-image="images/notice_mark.svg"-->
 
@@ -1115,7 +1119,7 @@ So, if you want to help contribute to this, or, any other developer tooling, I'm
 
 Reach out, or make a pull request on GitHub!
 
-> 20:20 (02:00) {11}
+> 22:35 (00:30) {13}
 
 ---
 # 5. Pipeline Generation Tooling
@@ -1157,7 +1161,7 @@ Well if we quote the library, we can utilise all the features of python such as:
 * packaging
 * and anything else you can imagine!
 
-> 21:30 (01:10) {12}
+> 23:45 (01:10) {14}
 
 ------
 <!-- .slide: data-background-image="images/python_not_yaml.svg"-->
@@ -1460,7 +1464,7 @@ However, has this caused our initial problem to go away?
 
 Well, it doesn't give us any protections from the pipeline failing to run, because again, there were no reasons for it to run correctly, since there were no `.pu` changes.
 
-> 22:45 (01:15) {13}
+> 25:00 (01:15) {15}
 
 ---
 <!-- .slide: data-background-image="images/dissappointed.svg"-->
@@ -1773,7 +1777,7 @@ Well that's not entirely correct, gitlab does allow you to merge lists,
 
 However this doesn't work for all cases, as it won't result in valid yaml.
 
-> 24:15 (01:30) {14}
+> 26:30 (01:30) {16}
 
 ---
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
@@ -1801,7 +1805,7 @@ maybe writing them in code is cleaner.
 
 Importantly, it's a choice that's up to you, your team, and, the situation.
 
-> 25:00 (00:45) {15}
+> 27:15 (00:45) {17}
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
@@ -2165,7 +2169,7 @@ database-test-job:
 
 Meaning that extending our list for one particular case is both easy to do and understand!
 
-> 26:30 (1:30) {16}
+> 28:45 (1:30) {18}
 
 ---
 <!-- .element: data-auto-animate -->
@@ -2289,8 +2293,7 @@ Check failed
 
 Or using the check and diff flags within a CI job before the PR is merged, which will error highlighting that an unexpected change has been made.
 
-> 27:00 (00:30) {17}
-
+> 29:15 (00:30) {19}
 
 ---
 # 1. Configuration Linting
@@ -2334,7 +2337,7 @@ Thus, my view from all of this is that simplicity is key.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
-> 28:30 (01:30) {18}
+> 30:45 (01:30) {20}
 
 ------
 # `@ekohilas`
@@ -2367,4 +2370,4 @@ and finally to you, for listening!
 
 I'll leave this up now so you can actually take pictures.
 
-> 29:00 (00:30) {19}
+> 31:15 (00:30) {21}
