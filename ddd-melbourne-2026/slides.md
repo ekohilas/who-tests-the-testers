@@ -852,15 +852,13 @@ Honestly it's bizarre how just how similar these tools are, both in what they do
 But anyways, these two tools let us run the individual jobs of our gitlab pipelines, locally, using containers.
 
 ------
-<!-- .slide: data-background-image="images/gitlab_logo_crossed.svg"-->
+<!-- .slide: data-background-image="images/long_live_the_king.svg"-->
 
 The core benefits of these tools are that they let us remove the dependency on gitlab.
 
 We might not want to spin up an entire pipeline just to run a single job.
 
 This is helpful as it quickens the feedback loop, by allowing us to locally replicate job environments that might otherwise be too different if simply run as a script.
-
-> TODO: Replace image with fitting meme like "Long live the king?" 
 
 ------
 <!-- .slide: data-background-image="images/downsides.svg"-->
