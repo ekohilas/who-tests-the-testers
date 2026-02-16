@@ -834,7 +834,7 @@ Yes you heard me right, the difference is a dash…
 ------
 <!-- .slide: data-background-image="images/gitlab-ci-local.svg"-->
 
-gitlab dash ci dash local, is a typescript tool made by Mads Jon Nielsen (Mass Yon Nielsen) in January of 2020
+gitlab dash ci dash local, is a typescript tool made by (Mass Yon Nielsen) Mads Jon Nielsen in January of 2020
 
 ------
 <!-- .slide: data-background-image="images/gitlabci-local.svg"-->
@@ -1126,7 +1126,7 @@ gitlab-ci-python-library is the only up to date library I could find to do this,
 
 (Although if you are interested, there are some typescript libraries which I had dismissed due to needing more attention)
 
-Anyways, gitlab-ci-python-library, or gcip, is a library from Thomas Steinbach (Schtienbahf) and Daniel von Eßen (fon essen), that allows you to replace your ci config file with python!
+Anyways, gitlab-ci-python-library, or gcip, is a library from Thomas (Schtienbahf) Steinbach and Daniel (fon essen) von Eßen, that allows you to replace your ci config file with python!
 
 ------
 <!-- .slide: data-background-image="images/question_mark.svg"-->
