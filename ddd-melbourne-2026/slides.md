@@ -898,7 +898,7 @@ So with the forth method, let's explore a different kind of testing.
 In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I took the initiative to make a tool myself...
 
 ------
-<!-- .slide: data-background-image="images/ci_test.svg"-->
+<!-- .slide: data-background-image="images/ci_test.png"-->
 
 ci-test!
 
