@@ -1507,7 +1507,7 @@ However, has this caused our initial problem to go away?
 
 Well, it doesn't give us any protections from the pipeline failing to run, because again, there were no reasons for it to run correctly, since there were no `.pu` changes.
 
-> 25:00 (01:15) {15}
+> 26:00 (01:15) {16}
 
 ---
 <!-- .slide: data-background-image="images/disappointed.svg"-->
@@ -1820,7 +1820,7 @@ Well that's not entirely correct, gitlab does allow you to merge lists,
 
 However this doesn't work for all cases, as it won't result in valid yaml.
 
-> 26:30 (01:30) {16}
+> 27:30 (01:30) {17}
 
 ---
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
@@ -1848,7 +1848,7 @@ maybe writing them in code is cleaner.
 
 Importantly, it's a choice that's up to you, your team, and, the situation.
 
-> 27:15 (00:45) {17}
+> 28:15 (00:45) {18}
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
@@ -2212,7 +2212,7 @@ database-test-job:
 
 Meaning that extending our list for one particular case is both easy to do and understand!
 
-> 28:45 (1:30) {18}
+> 29:45 (1:30) {19}
 
 ---
 <!-- .element: data-auto-animate -->
@@ -2336,7 +2336,7 @@ Check failed
 
 Or using the check and diff flags within a CI job before the PR is merged, which will error highlighting that an unexpected change has been made.
 
-> 29:15 (00:30) {19}
+> 30:15 (00:30) {20}
 
 ---
 # 1. Configuration Linting
@@ -2380,7 +2380,7 @@ Thus, my view from all of this is that simplicity is key.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
-> 30:45 (01:30) {20}
+> 31:45 (01:30) {21}
 
 ------
 # `@ekohilas`
@@ -2421,4 +2421,4 @@ and finally to you, for listening!
 
 I'll leave this up now so you can actually take pictures.
 
-> 31:15 (00:30) {21}
+> 32:15 (00:30) {22}
