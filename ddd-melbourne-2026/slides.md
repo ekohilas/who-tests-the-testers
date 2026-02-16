@@ -6,14 +6,8 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
-> TODO: Update bio?
-
 ------
-# Who Tests the Testers?<br>Making and Testing Pipelines
-<!-- .element: class="r-fit-text" -->
-### Evan Kohilas
-### `@ekohilas`
-### `nohumanerrors.com`
+<!-- .slide: data-background-image="images/intro.svg"-->
 
 So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
 
