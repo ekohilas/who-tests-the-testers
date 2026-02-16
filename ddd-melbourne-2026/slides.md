@@ -7,7 +7,6 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
 > TODO: Update bio?
-> TODO: Dry run with timings.
 
 ------
 # Who Tests the Testers?<br>Making and Testing Pipelines
@@ -17,6 +16,8 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 ### `nohumanerrors.com`
 
 So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
+
+> 00:30 (00:30) {1}
 
 ---
 <!-- .slide: data-background-image="images/oopsies.svg"-->
@@ -54,7 +55,7 @@ So today, we'll walk through this journey of mine, in 3 parts.
 2. show how I've found ways that they can break,
 3. and finally, deep dive into the methods to stop them from breaking.
 
-> > 01:30 (01:30) {1}
+> 02:00 (01:30) {2}
 
 ---
 <!-- .element: data-background-image="images/raised_hands.svg"-->
@@ -93,7 +94,7 @@ if you've had a pipeline that you've written fail on you.
 
 Wow x of you.
 
-> 02:30 (01:00) {2}
+> 03:00 (01:00) {3}
 
 ---
 <!-- .slide: data-background-image="images/full_pipeline.svg"-->
@@ -170,7 +171,7 @@ don't fret if you're a user of other CI tools!
 My goal is for the ideas to be general enough to be applicable!
 And, for tools like GitHub Actions, additional resources will be given at the end.
 
-> 04:00 (01:30) {3}
+> 04:45 (01:45) {4}
 
 ---
 <!-- .slide: data-background-image="images/gitlab_ci_yml.svg"-->
@@ -504,7 +505,7 @@ It's similar enough as an example to what I was working with,
 
 And, it works when it's merged in!
 
-> 07:40 (03:40) {4}
+> 08:35 (03:50) {5}
 
 ---
 <!-- .slide: data-background-image="images/prs_and_time.svg"-->
@@ -613,6 +614,8 @@ Well, while it's great that we've figured out why this happened, and that the fi
 
 in our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
 
+> 10:20 (1:45)
+
 ------
 <!-- .slide: data-background-image="images/thought_bubble.svg"-->
 
@@ -628,7 +631,7 @@ Can anyone shout out some examples for why this problem could've happened?
 - The config is too complex
 - It wasn't written using DRY
 
-> 10:10 (2:30) {5}
+> 12:05 (1:45)
 
 ------
 <!-- .slide: data-background-image="images/human_error.svg"-->
@@ -656,7 +659,7 @@ Can I get a raise of hands?
 
 > See that's like ?% of the audience!
 
-> 10:55 (0:45) {6}
+> 12:55 (0:50) {6}
 
 ---
 <!-- .slide: data-background-image="images/thinking.svg"-->
@@ -688,7 +691,7 @@ which we'll dive into now:
 
 Now I won't claim that any single technique is the best. My goal is to cover the pros and cons to help you decide which one (or which combination) works best in your situation.
 
-> 12:10 (01:15) {7}
+> 14:15 (01:20) {7}
 
 ---
 # 1. Configuration Linting
@@ -774,7 +777,7 @@ And with the full configuration tool, expansion is limited, and won't expand out
 
 So while linting tools do have their use, they are only a single piece of the puzzle, just like how we can't expect linters to catch logic errors.
 
-> 14:40 (2:30) {8}
+> 16:50 (2:35) {8}
 
 ---
 # 2. Running End to End Pipelines
@@ -821,7 +824,7 @@ This is great, as it would reveal our problem,
 
 However, you may have noticed that this is an intensive and costly process, as it's slow and manual, and may not scale with all of the combinations of changes, that may be introduced with lots of different rules.
 
-> 16:20 (01:40) {9}
+> 18:35 (01:45) {9}
 
 ---
 # 3. Running Pipelines Locally
@@ -885,7 +888,7 @@ And if we're solely testing our pipeline changes, they don't give us any static 
 
 So in our examples above, both of these tools also won't help us uncover our problem, even though they might have other benefits.
 
-> 18:20 (02:00) {10}
+> 20:35 (02:00) {10}
 
 ---
 # 4. Configuration Static Analysis Testing
@@ -984,10 +987,10 @@ Of course like everything else, it has it's drawbacks and can't solely be depend
 
 But it is something simple, that will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
 
-> 19:50 (01:30) {11}
+> 22:10 (01:35) {11}
 
 ---
-<!-- .slide: data-background-image="images/ci_test_refactor_0.svg"-->
+<!-- .slide: data-background-image="images/ci_test_refactor_0.svg"--> 
 
 And it's true value was highlighted in one of my previous engagements.
 
@@ -1099,7 +1102,7 @@ Removing anything that's unnecessary...
 
 the tests, (or in this case the output jobs,) don't change, signalling a safe refactor.
 
-> 22:05 (02:15) {12}
+> 24:30 (02:20)
 
 ------
 <!-- .slide: data-background-image="images/notice_mark.svg"-->
@@ -1115,7 +1118,7 @@ So, if you want to help contribute to this, or, any other developer tooling, I'm
 
 Reach out, or make a pull request on GitHub!
 
-> 22:35 (00:30) {13}
+> 25:00 (00:30) {12}
 
 ---
 # 5. Pipeline Generation Tooling
@@ -1157,10 +1160,10 @@ Well if we quote the library, we can utilise all the features of python such as:
 * packaging
 * and anything else you can imagine!
 
-> 23:45 (01:10) {14}
+> 26:10 (01:10) {13}
 
 ---
-<!-- .slide: data-background-image="images/question_mark.svg"-->
+<!-- .slide: data-background-image="images/question_mark.svg"--> 
 
 So how do generated pipelines work?
 
@@ -1204,14 +1207,14 @@ as it uses, the generated ci config file,
 
 to create a child pipeline that runs all of the previous jobs that we wanted to run.
 
-> (24:45) 01:00 {15}
+> 27:10 (01:00) {14}
 
 ---
-<!-- .slide: data-background-image="images/python_not_yaml.svg"-->
+<!-- .slide: data-background-image="images/python_not_yaml.svg"--> 
 
 So what would it look like to replace our yaml with python?
 
----
+------
 <!-- .element: data-auto-animate -->
 ```python[1]
 # .gitlab-ci.py
@@ -1507,10 +1510,10 @@ However, has this caused our initial problem to go away?
 
 Well, it doesn't give us any protections from the pipeline failing to run, because again, there were no reasons for it to run correctly, since there were no `.pu` changes.
 
-> 26:00 (01:15) {16}
+> 28:25 (01:15) {15}
 
 ---
-<!-- .slide: data-background-image="images/disappointed.svg"-->
+<!-- .slide: data-background-image="images/disappointed.svg"--> 
 
 So unfortunately, it seems like generated pipelines won't directly solve our problem.
 
@@ -1820,10 +1823,10 @@ Well that's not entirely correct, gitlab does allow you to merge lists,
 
 However this doesn't work for all cases, as it won't result in valid yaml.
 
-> 27:30 (01:30) {17}
+> 29:55 (01:30) {16}
 
 ---
-<!-- .slide: data-background-image="images/thought_bubble.svg"-->
+<!-- .slide: data-background-image="images/thought_bubble.svg"--> 
 
 So are generated pipelines a good idea?
 I think the authors have a good view of this, which I'll do my best to summarise
@@ -1848,10 +1851,10 @@ maybe writing them in code is cleaner.
 
 Importantly, it's a choice that's up to you, your team, and, the situation.
 
-> 28:15 (00:45) {18}
+> 30:45 (00:50) {17}
 
 ---
-<!-- .slide: data-background-image="images/thinking.svg"-->
+<!-- .slide: data-background-image="images/thinking.svg"--> 
 
 If you do see the need to integrate some kind of programming in your configuration, but feel like pipeline generation is too much, there is one other approach to consider.
 
@@ -2212,10 +2215,10 @@ database-test-job:
 
 Meaning that extending our list for one particular case is both easy to do and understand!
 
-> 29:45 (1:30) {19}
+> 32:15 (1:30) {18}
 
 ---
-<!-- .element: data-auto-animate -->
+<!-- .element: data-auto-animate --> 
 ```yaml [17]
 # .gitlab-ci.yml
 #[[[cog
@@ -2336,7 +2339,7 @@ Check failed
 
 Or using the check and diff flags within a CI job before the PR is merged, which will error highlighting that an unexpected change has been made.
 
-> 30:15 (00:30) {20}
+> 32:50 (00:35) {19}
 
 ---
 # 1. Configuration Linting
@@ -2380,7 +2383,7 @@ Thus, my view from all of this is that simplicity is key.
 
 Question everything that is there, and utilise the least you can, to get the job done.
 
-> 31:45 (01:30) {21}
+> 34:20 (01:30)
 
 ------
 # `@ekohilas`
@@ -2420,5 +2423,6 @@ and finally to you, for listening!
 # Thanks!
 
 I'll leave this up now so you can actually take pictures.
+Thanks!
 
-> 32:15 (00:30) {22}
+> 35:20 (01:00) {20}
