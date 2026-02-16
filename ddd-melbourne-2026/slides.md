@@ -7,7 +7,6 @@ Alrighty then, to start with, can I get some noise from anyone else who thinks t
 Yeah! It's quite fitting for a pipelines talk isn't it?
 
 > TODO: Update bio?
-> TODO: Bring back generated pipelines explanation to fill time
 > TODO: Dry run with timings.
 
 ------
@@ -1160,7 +1159,54 @@ Well if we quote the library, we can utilise all the features of python such as:
 
 > 23:45 (01:10) {14}
 
+---
+<!-- .slide: data-background-image="images/question_mark.svg"-->
+
+So how do generated pipelines work?
+
 ------
+<!-- .slide: data-background-image="images/gcip_diagram_0.svg"-->
+
+In our ci config file, where we've been defining our testing jobs,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_1.svg"-->
+
+we instead define a generate pipeline job,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_2.svg"-->
+
+which runs our python ci config file,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_3.svg"-->
+
+to create a generated config ci file, that contains all of the previous jobs that we want to run.
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_4.svg"-->
+
+The original ci config file had also defined a run pipeline job,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_5.svg"-->
+
+that, has a needs on the generate pipeline job,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_6.svg"-->
+
+as it uses, the generated ci config file,
+
+------
+<!-- .slide: data-background-image="images/gcip_diagram_7.svg"-->
+
+to create a child pipeline that runs all of the previous jobs that we wanted to run.
+
+> (24:45) 01:00 {15}
+
+---
 <!-- .slide: data-background-image="images/python_not_yaml.svg"-->
 
 So what would it look like to replace our yaml with python?
