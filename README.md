@@ -62,6 +62,10 @@ Then, we'll showcase tools that can be used for testing, creating, and simulatin
   - [github-actions-wac](https://github.com/webiny/github-actions-wac)
   - [GitHub Actions Workflow Generator](https://githubactionsworkflowgenerator.octopus.com/)
 
+### General References
+- Static Yaml Injection
+  - [Cog](https://github.com/nedbat/cog)
+
 ## Setup 
 1. Since reveal.js exists as a submodule, `git clone --recurse-submodules` needs to be used when cloning (or `git submodule update --init --recursive` if already cloned).
 2. `cd src/reveal.js && npm install`
