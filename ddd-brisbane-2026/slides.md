@@ -2311,7 +2311,8 @@ This may have those of you knowledgeable in yaml thinking...
 layout: default
 ---
 
-```yaml {*}{maxHeight:'390px'}
+````md magic-move
+```yaml {*}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2335,78 +2336,69 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
+```yaml {4-5}
+# .gitlab-ci.yml
+image: python:latest
+
+.app-changelist: &app-changelist
+    - "**/*.py"
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes:
+            - "**/*.pu"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+```yaml {4-5,10,15}
+# .gitlab-ci.yml
+image: python:latest
+
+.app-changelist: &app-changelist
+    - "**/*.py"
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes: *app-changelist
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules:
+        - changes: *app-changelist
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes: *app-changelist
+```
+````
 
 <!--
 "Doesn't yaml also let you create a list that can be referenced?"
 And you'd be correct.
--->
 
----
-layout: default
----
+[click]
 
-```yaml {4-5}{maxHeight:'390px'}
-# .gitlab-ci.yml
-image: python:latest
-
-.app-changelist: &app-changelist
-    - "**/*.py"
-
-test-job:
-    script: "python test.py"
-    rules:
-        - changes:
-            - "**/*.py"
-
-database-setup-job:
-    script: "python setup_test_database.py"
-    rules:
-        - changes:
-            - "**/*.pu"
-
-database-test-job:
-    script: "python database_tests.py"
-    needs:
-        - "database-setup-job"
-    rules:
-        - changes:
-            - "**/*.py"
-```
-
-<!--
 we _can_ create a key with an anchor,
--->
 
----
-layout: default
----
+[click]
 
-```yaml {4-5,10,15}{maxHeight:'390px'}
-# .gitlab-ci.yml
-image: python:latest
-
-.app-changelist: &app-changelist
-    - "**/*.py"
-
-test-job:
-    script: "python test.py"
-    rules:
-        - changes: *app-changelist
-
-database-setup-job:
-    script: "python setup_test_database.py"
-    rules:
-        - changes: *app-changelist
-
-database-test-job:
-    script: "python database_tests.py"
-    needs:
-        - "database-setup-job"
-    rules:
-        - changes: *app-changelist
-```
-
-<!--
 and reference them with aliases to do the same thing and solve our problem.
 -->
 
