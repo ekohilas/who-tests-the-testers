@@ -3313,11 +3313,13 @@ Question everything that is there, and utilise the least you can, to get the job
 -->
 
 ---
+class: h-full flex flex-col items-center
+---
 
 # `@ekohilas`
 # `citest.nohumanerrors.com`
-![qr code](images/qr_code.svg)<!-- .element: style="max-height: 95%"-->
-<!-- .element: class="r-stretch"-->
+<img src="/images/qr_code.svg" alt="qr code" class="flex-1 min-h-0 object-contain">
+
 # <br>
 
 <!--
@@ -3356,11 +3358,13 @@ and finally to you, for listening!
 -->
 
 ---
+class: h-full flex flex-col items-center
+---
 
 # `@ekohilas`
 # `citest.nohumanerrors.com`
-![qr code](images/qr_code.svg)<!-- .element: style="max-height: 95%"-->
-<!-- .element: class="r-stretch"-->
+<img src="/images/qr_code.svg" alt="qr code" class="flex-1 min-h-0 object-contain">
+
 # Thanks!
 
 <!--
