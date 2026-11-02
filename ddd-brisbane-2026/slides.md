@@ -13,9 +13,10 @@ canvasWidth: 960
 # for styling parts of text
 mdc: true
 section: 1
+layout: full
 ---
 
-<!-- .slide: data-background-video="images/3d_pipes.webm" data-background-video-loop="loop" data-background-size="contain" -->
+<video src="/images/3d_pipes.webm" autoplay loop muted class="absolute inset-0 w-full h-full object-contain" />
 
 <!--
 Thank you! I'm so humbled to be speaking at DDD! 
