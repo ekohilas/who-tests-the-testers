@@ -1790,6 +1790,12 @@ backgroundSize: contain
 >
 > </v-clicks>
 
+<style>
+blockquote {
+  @apply absolute left-[9%] right-[9%] top-[25%] p-0 bg-transparent border-none text-black text-base;
+}
+</style>
+
 <!--
 Well if we quote the library, we can utilise all the features of python such as:
 * code re-use
