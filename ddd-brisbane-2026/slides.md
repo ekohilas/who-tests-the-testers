@@ -81,12 +81,9 @@ And so these events got me thinking. If platform teams can help engineers run te
 
 ---
 
-# 1. How to <u>make</u> a pipeline
-<!-- .element: class="fragment" -->
-# 2. How to <u>break</u> a pipeline
-<!-- .element: class="fragment" -->
-# 3. How to <u>not</u> break a pipeline
-<!-- .element: class="fragment" -->
+<h1 v-click>1. How to <u>make</u> a pipeline</h1>
+<h1 v-click>2. How to <u>break</u> a pipeline</h1>
+<h1 v-click>3. How to <u>not</u> break a pipeline</h1>
 
 <!--
 So today, we'll walk through this journey of mine, in 3 parts.
@@ -958,11 +955,11 @@ how do I stop this from happening to me?
 
 ---
 
-# 1. Configuration Linting <!-- .element: class="fragment" -->
-# 2. Running End to End Pipelines <!-- .element: class="fragment" -->
-# 3. Running Pipelines Locally <!-- .element: class="fragment" -->
-# 4. Configuration Static Analysis Testing <!-- .element: class="fragment" -->
-# 5. Pipeline Generation Tooling <!-- .element: class="fragment" -->
+<h1 v-click>1. Configuration Linting</h1>
+<h1 v-click>2. Running End to End Pipelines</h1>
+<h1 v-click>3. Running Pipelines Locally</h1>
+<h1 v-click>4. Configuration Static Analysis Testing</h1>
+<h1 v-click>5. Pipeline Generation Tooling</h1>
 
 <!--
 Thank you,  
@@ -1780,14 +1777,18 @@ image: /images/quote_box.svg
 backgroundSize: contain
 ---
 > Creating your pipelines in Python code allows you all the features of that language, like:
-> * re-use code (DRY - Don't Repeat Yourself) <!-- .element: class="fragment" -->
-> * use variables, control flow (if-then-else, loops, ...), complex data structures, input/output, error handling, ... <!-- .element: class="fragment" -->
-> * programming paradigms like object-oriented or functional programming <!-- .element: class="fragment" -->
-> * use 3rd party libraries in your pipelines, like boto3 <!-- .element: class="fragment" -->
-> * test driven development of Pipelines with pytest <!-- .element: class="fragment" -->
-> * package management and distribution of your pipeline code <!-- .element: class="fragment" -->
-> * ... anything you can imagine to do with Python code <!-- .element: class="fragment" -->
-<!-- .element: style="box-shadow: none" -->
+>
+> <v-clicks>
+>
+> * re-use code (DRY - Don't Repeat Yourself)
+> * use variables, control flow (if-then-else, loops, ...), complex data structures, input/output, error handling, ...
+> * programming paradigms like object-oriented or functional programming
+> * use 3rd party libraries in your pipelines, like boto3
+> * test driven development of Pipelines with pytest
+> * package management and distribution of your pipeline code
+> * ... anything you can imagine to do with Python code
+>
+> </v-clicks>
 
 <!--
 Well if we quote the library, we can utilise all the features of python such as:
