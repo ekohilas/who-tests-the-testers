@@ -2851,7 +2851,8 @@ Meaning that extending our list for one particular case is both easy to do and u
 section: 19
 ---
 
-```yaml {17}{maxHeight:'390px'}
+````md magic-move
+```yaml {17}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2890,18 +2891,7 @@ database-test-job:
             - "**/*.py"
             #[[[end]]]
 ```
-
-<!--
-If you're wondering "What if someone accidentally changes what's between the tags?" 
-
-Then there's a couple of options you have to protect your platform.
--->
-
----
-layout: default
----
-
-```yaml {18}{maxHeight:'390px'}
+```yaml {18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2940,8 +2930,15 @@ database-test-job:
             - "**/*.py"
             #[[[end]]] (sum: KXQVeDRZak)
 ```
+````
 
 <!--
+If you're wondering "What if someone accidentally changes what's between the tags?" 
+
+Then there's a couple of options you have to protect your platform.
+
+[click]
+
 Such as enabling the checksum flag, which, when running cog...
 -->
 
