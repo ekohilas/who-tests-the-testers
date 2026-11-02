@@ -2510,7 +2510,8 @@ Cog is a tool that allows you to use small bits of Python code in static files t
 layout: default
 ---
 
-```yaml {1,8,14}{maxHeight:'390px'}
+````md magic-move
+```yaml {1,8,14}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2534,16 +2535,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-So in our previous example where we wanted to unify these as a list...
--->
-
----
-layout: default
----
-
-```yaml {2-4}{maxHeight:'390px'}
+```yaml {2-4}
 # .gitlab-ci.yml
 #[[[cog
 #]]]
@@ -2571,16 +2563,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-We would first create a comment with a cog block
--->
-
----
-layout: default
----
-
-```yaml {3-4}{maxHeight:'390px'}
+```yaml {3-4}
 # .gitlab-ci.yml
 #[[[cog
 # def app_changelist():
@@ -2610,16 +2593,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-Add a python function to specify our changes
--->
-
----
-layout: default
----
-
-```yaml {3}{maxHeight:'390px'}
+```yaml {3}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2650,16 +2624,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-import cog, ...
--->
-
----
-layout: default
----
-
-```yaml {6-7}{maxHeight:'390px'}
+```yaml {6-7}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2692,16 +2657,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-To output the changes on iteration
--->
-
----
-layout: default
----
-
-```yaml {16-17}{maxHeight:'390px'}
+```yaml {16-17}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2734,16 +2690,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-And then where we've defined our changes,
--->
-
----
-layout: default
----
-
-```yaml {16-18}{maxHeight:'390px'}
+```yaml {16-18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2779,18 +2726,7 @@ database-test-job:
             #[[[cog app_changelist()]]]
             #[[[end]]]
 ```
-
-<!--
-we can use cog to run that function to output the change list.
-
-Then, when we run cog over the file,
--->
-
----
-layout: default
----
-
-```yaml {16-18}{maxHeight:'390px'}
+```yaml {16-18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2828,18 +2764,7 @@ database-test-job:
             - "**/*.py"
             #[[[end]]]
 ```
-
-<!--
-It'll update what's between the tags with our generated output.
-
-And because it works on the file itself, there's no guessing what the generation will do.
--->
-
----
-layout: default
----
-
-```yaml {19}{maxHeight:'390px'}
+```yaml {19}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2878,8 +2803,45 @@ database-test-job:
             - "**/*.py"
             #[[[end]]]
 ```
+````
 
 <!--
+So in our previous example where we wanted to unify these as a list...
+
+[click]
+
+We would first create a comment with a cog block
+
+[click]
+
+Add a python function to specify our changes
+
+[click]
+
+import cog, ...
+
+[click]
+
+To output the changes on iteration
+
+[click]
+
+And then where we've defined our changes,
+
+[click]
+
+we can use cog to run that function to output the change list.
+
+Then, when we run cog over the file,
+
+[click]
+
+It'll update what's between the tags with our generated output.
+
+And because it works on the file itself, there's no guessing what the generation will do.
+
+[click]
+
 Meaning that extending our list for one particular case is both easy to do and understand!
 
 > 32:15 (1:30) {18}
