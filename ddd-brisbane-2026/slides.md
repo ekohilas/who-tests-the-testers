@@ -339,46 +339,20 @@ https://carbon.now.sh/?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=ya
 layout: default
 ---
 
+````md magic-move
 ```yaml {1}
 # .gitlab-ci.yml
 ```
-
-<!--
-We'll make a simple one now, that one can use on their repo to ensure tests pass before merging
--->
-
----
-layout: default
----
-
 ```yaml {2}
 # .gitlab-ci.yml
 image: python:latest
 ```
-
-<!--
-Here we define that we want jobs to run with a docker image that contains the latest version of your programming language of choice, which for this talk, will be python.
--->
-
----
-layout: default
----
-
 ```yaml {4}
 # .gitlab-ci.yml
 image: python:latest
 
 test-job:
 ```
-
-<!--
-Then we define a job, with the name test-job
--->
-
----
-layout: default
----
-
 ```yaml {5}
 # .gitlab-ci.yml
 image: python:latest
@@ -386,15 +360,6 @@ image: python:latest
 test-job:
     script: "python test.py"
 ```
-
-<!--
-And below we define "script" as the command to run for that job, which for us will be a python file called `test.py`
--->
-
----
-layout: default
----
-
 ```yaml
 # .gitlab-ci.yml
 image: python:latest
@@ -402,21 +367,6 @@ image: python:latest
 test-job:
     script: "python test.py"
 ```
-
-<!--
-Of course this is probably the simplest pipeline we could create, and thus shouldn't be used as a reference.
-
-This is because it's utilising a lot of what gitlab is offering by default, and we can get away with not having to install any packages as none are being used.
-
-So if you are looking for reference pipelines, I'll have some links in the resources at the end.
-
-That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline that I've worked on might, so let's extend it to do so.
--->
-
----
-layout: default
----
-
 ```yaml {6}
 # .gitlab-ci.yml
 image: python:latest
@@ -425,15 +375,6 @@ test-job:
     script: "python test.py"
     rules:
 ```
-
-<!--
-To do this, we'll add some rules, which decide on what conditions the job runs
--->
-
----
-layout: default
----
-
 ```yaml {7}
 # .gitlab-ci.yml
 image: python:latest
@@ -443,15 +384,6 @@ test-job:
     rules:
         - changes:
 ```
-
-<!--
-We'll then specify that we want the job to run whenever there's changes that have been made.
--->
-
----
-layout: default
----
-
 ```yaml {8}
 # .gitlab-ci.yml
 image: python:latest
@@ -462,15 +394,6 @@ test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-Such as changes to any python files.
--->
-
----
-layout: default
----
-
 ```yaml
 # .gitlab-ci.yml
 image: python:latest
@@ -481,16 +404,6 @@ test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-This is so that we can speed up our pipelines by not unnecessarily running a costly job, on unrelated changes, to other files within our repo, such as documentation.
-Another thing we might need to extend on, is having to run different types of testing jobs.
--->
-
----
-layout: default
----
-
 ```yaml {10}
 # .gitlab-ci.yml
 image: python:latest
@@ -503,15 +416,6 @@ test-job:
 
 database-test-job:
 ```
-
-<!--
-For example, a `database-test-job`
--->
-
----
-layout: default
----
-
 ```yaml {10-14}
 # .gitlab-ci.yml
 image: python:latest
@@ -528,16 +432,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-which we could setup in a similar way, except... it might depend on some test databases to have been created.
--->
-
----
-layout: default
----
-
-```yaml {10}{maxHeight:'390px'}
+```yaml {10}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -562,16 +457,7 @@ database-test-job:
  
  
 ```
-
-<!--
-So for that, we'll require a new setup job to be run,
--->
-
----
-layout: default
----
-
-```yaml {10-15}{maxHeight:'390px'}
+```yaml {10-15}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -593,16 +479,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-which needs to be run under the same set of changes,
--->
-
----
-layout: default
----
-
-```yaml {10-20}{maxHeight:'390px'}
+```yaml {10-20}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -624,16 +501,7 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!--
-and additionally, we need some way of specifying that the `database-test-job` can only run once the `database-setup-job` is finished.
--->
-
----
-layout: default
----
-
-```yaml {18-19}{maxHeight:'390px'}
+```yaml {18-19}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -657,43 +525,102 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
+```yaml {*}
+# .gitlab-ci.yml
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules: 
+        - changes: 
+            - "**/*.pu"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+````
 
 <!--
+We'll make a simple one now, that one can use on their repo to ensure tests pass before merging
+
+[click]
+
+Here we define that we want jobs to run with a docker image that contains the latest version of your programming language of choice, which for this talk, will be python.
+
+[click]
+
+Then we define a job, with the name test-job
+
+[click]
+
+And below we define "script" as the command to run for that job, which for us will be a python file called `test.py`
+
+[click]
+
+Of course this is probably the simplest pipeline we could create, and thus shouldn't be used as a reference.
+
+This is because it's utilising a lot of what gitlab is offering by default, and we can get away with not having to install any packages as none are being used.
+
+So if you are looking for reference pipelines, I'll have some links in the resources at the end.
+
+That being said, given how simple this example pipeline is, it probably doesn't mimic the issues that a real pipeline that I've worked on might, so let's extend it to do so.
+
+[click]
+
+To do this, we'll add some rules, which decide on what conditions the job runs
+
+[click]
+
+We'll then specify that we want the job to run whenever there's changes that have been made.
+
+[click]
+
+Such as changes to any python files.
+
+[click]
+
+This is so that we can speed up our pipelines by not unnecessarily running a costly job, on unrelated changes, to other files within our repo, such as documentation.
+Another thing we might need to extend on, is having to run different types of testing jobs.
+
+[click]
+
+For example, a `database-test-job`
+
+[click]
+
+which we could setup in a similar way, except... it might depend on some test databases to have been created.
+
+[click]
+
+So for that, we'll require a new setup job to be run,
+
+[click]
+
+which needs to be run under the same set of changes,
+
+[click]
+
+and additionally, we need some way of specifying that the `database-test-job` can only run once the `database-setup-job` is finished.
+
+[click]
+
 To do that, we can use the `needs` keyword, which specifies that the `database-test-job` "needs" the `database-setup-job` to finish successfully before the tests can be started and completed correctly.
 
 With the idea being that we want as much running in parallel as possible, such that our previous tests don't have to wait for setting up databases if they don't depend on them.
--->
 
----
-layout: default
----
+[click]
 
-```yaml {*}{maxHeight:'390px'}
-# .gitlab-ci.yml
-image: python:latest
-
-test-job:
-    script: "python test.py"
-    rules:
-        - changes:
-            - "**/*.py"
-
-database-setup-job:
-    script: "python setup_test_database.py"
-    rules: 
-        - changes: 
-            - "**/*.pu"
-
-database-test-job:
-    script: "python database_tests.py"
-    needs:
-        - "database-setup-job"
-    rules:
-        - changes:
-            - "**/*.py"
-```
-
-<!--
 And so now, what we've landed on is great.
 
 It's similar enough as an example to what I was working with,
