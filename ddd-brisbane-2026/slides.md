@@ -1807,41 +1807,22 @@ So what would it look like to replace our yaml with python?
 -->
 
 ---
+---
 
+````md magic-move
 ```python {1}
 # .gitlab-ci.py
 ```
-
-<!--
-Well first we create a `.gitlab-ci.py` file,
--->
-
----
-
 ```python {2}
 # .gitlab-ci.py
 import gcip
 ```
-
-<!--
-then import the library,
--->
-
----
-
 ```python {4}
 # .gitlab-ci.py
 import gcip
 
 pipeline = gcip.Pipeline()
 ```
-
-<!--
-create a pipeline,
--->
-
----
-
 ```python {5}
 # .gitlab-ci.py
 import gcip
@@ -1849,13 +1830,6 @@ import gcip
 pipeline = gcip.Pipeline()
 pipeline.initialize_image("python:latest")
 ```
-
-<!--
-specify the default image,
--->
-
----
-
 ```python {7-8}
 # .gitlab-ci.py
 import gcip
@@ -1867,13 +1841,6 @@ test_job = gcip.Job(
 )
 
 ```
-
-<!--
-then, we create a job,
--->
-
----
-
 ```python {8}
 # .gitlab-ci.py
 import gcip
@@ -1886,13 +1853,6 @@ test_job = gcip.Job(
 )
 
 ```
-
-<!--
-give it a name,
--->
-
----
-
 ```python {9}
 # .gitlab-ci.py
 import gcip
@@ -1906,13 +1866,6 @@ test_job = gcip.Job(
 )
 
 ```
-
-<!--
-add a script,
--->
-
----
-
 ```python {10}
 # .gitlab-ci.py
 import gcip
@@ -1926,14 +1879,7 @@ test_job = gcip.Job(
     rules=[gcip.Rule(changes=["**/*.py"])],
 )
 ```
-
-<!--
-and it's rules,
--->
-
----
-
-```python {13-23}{maxHeight:'390px'}
+```python {13-23}
 # .gitlab-ci.py
 import gcip
 
@@ -1965,14 +1911,7 @@ database_test_job = gcip.Job(
 
 
 ```
-
-<!--
-doing the same for the other jobs
--->
-
----
-
-```python {22}{maxHeight:'390px'}
+```python {22}
 # .gitlab-ci.py
 import gcip
 
@@ -2005,14 +1944,7 @@ database_test_job = gcip.Job(
 
 
 ```
-
-<!--
-add in our needs
--->
-
----
-
-```python {26-30}{maxHeight:'390px'}
+```python {26-30}
 # .gitlab-ci.py
 import gcip
 
@@ -2045,14 +1977,7 @@ pipeline.add_children(
 )
 
 ```
-
-<!--
-before finally adding all jobs as children of the pipeline
--->
-
----
-
-```python {32}{maxHeight:'390px'}
+```python {32}
 # .gitlab-ci.py
 import gcip
 
@@ -2086,8 +2011,53 @@ pipeline.add_children(
 
 pipeline.write_yaml()
 ```
+````
 
 <!--
+Well first we create a `.gitlab-ci.py` file,
+
+[click]
+
+then import the library,
+
+[click]
+
+create a pipeline,
+
+[click]
+
+specify the default image,
+
+[click]
+
+then, we create a job,
+
+[click]
+
+give it a name,
+
+[click]
+
+add a script,
+
+[click]
+
+and it's rules,
+
+[click]
+
+doing the same for the other jobs
+
+[click]
+
+add in our needs
+
+[click]
+
+before finally adding all jobs as children of the pipeline
+
+[click]
+
 And then writing that pipeline out to yaml
 -->
 
