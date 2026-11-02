@@ -670,7 +670,8 @@ Now if we go back to our pipeline definition,
 layout: default
 ---
 
-```yaml {7-22}{maxHeight:'390px'}
+````md magic-move
+```yaml {7-22}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -694,6 +695,31 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
+```yaml {8,14,22}
+# .gitlab-ci.yml
+image: python:latest
+
+test-job:
+    script: "python test.py"
+    rules:
+        - changes:
+            - "**/*.py"
+
+database-setup-job:
+    script: "python setup_test_database.py"
+    rules: 
+        - changes: 
+            - "**/*.pu"
+
+database-test-job:
+    script: "python database_tests.py"
+    needs:
+        - "database-setup-job"
+    rules:
+        - changes:
+            - "**/*.py"
+```
+````
 
 <!--
 Can anyone tell me why it didn't run?
@@ -703,38 +729,9 @@ Can anyone tell me why it didn't run?
 > [It might not have been very obvious... It's...]
 
 > Yes, thank you, that's right.
--->
 
----
-layout: default
----
+[click]
 
-```yaml {8,14,22}{maxHeight:'390px'}
-# .gitlab-ci.yml
-image: python:latest
-
-test-job:
-    script: "python test.py"
-    rules:
-        - changes:
-            - "**/*.py"
-
-database-setup-job:
-    script: "python setup_test_database.py"
-    rules: 
-        - changes: 
-            - "**/*.pu"
-
-database-test-job:
-    script: "python database_tests.py"
-    needs:
-        - "database-setup-job"
-    rules:
-        - changes:
-            - "**/*.py"
-```
-
-<!--
 Because there was a typo in the changes.
 The `database-test-job` ran, because there were changes to files ending in `.py`,
 But the `database-setup-job` didn't run, because there weren't changes to files ending in `.pu`.
