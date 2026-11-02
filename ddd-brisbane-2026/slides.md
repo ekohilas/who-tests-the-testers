@@ -537,7 +537,7 @@ which we could setup in a similar way, except... it might depend on some test da
 layout: default
 ---
 
-```yaml {10}
+```yaml {10}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -571,7 +571,7 @@ So for that, we'll require a new setup job to be run,
 layout: default
 ---
 
-```yaml {10-15}
+```yaml {10-15}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -602,7 +602,7 @@ which needs to be run under the same set of changes,
 layout: default
 ---
 
-```yaml {10-20}
+```yaml {10-20}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -633,7 +633,7 @@ and additionally, we need some way of specifying that the `database-test-job` ca
 layout: default
 ---
 
-```yaml {18-19}
+```yaml {18-19}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -668,7 +668,7 @@ With the idea being that we want as much running in parallel as possible, such t
 layout: default
 ---
 
-```yaml
+```yaml {*}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -743,7 +743,7 @@ Now if we go back to our pipeline definition,
 layout: default
 ---
 
-```yaml {7-22}
+```yaml {7-22}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -782,7 +782,7 @@ Can anyone tell me why it didn't run?
 layout: default
 ---
 
-```yaml {8,14,22}
+```yaml {8,14,22}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -1387,7 +1387,7 @@ As an example, it can produce snapshots of the pipeline, by collating relevant i
 
 ---
 
-```json {7,10-17}
+```json {7,10-17}{maxHeight:'390px'}
 [
   {
     "changes": [
@@ -2012,7 +2012,7 @@ and it's rules,
 
 ---
 
-```python {13-23}
+```python {13-23}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2051,7 +2051,7 @@ doing the same for the other jobs
 
 ---
 
-```python {22}
+```python {22}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2091,7 +2091,7 @@ add in our needs
 
 ---
 
-```python {26-30}
+```python {26-30}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2131,7 +2131,7 @@ before finally adding all jobs as children of the pipeline
 
 ---
 
-```python {32}
+```python {32}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2305,7 +2305,7 @@ However, there is one other thing to consider...
 
 ---
 
-```python
+```python {*}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2345,7 +2345,7 @@ Since our pipeline is now in Python,
 
 ---
 
-```python {7}
+```python {7}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2387,7 +2387,7 @@ they do let us easily create a changeset using a list,
 
 ---
 
-```python {7,12,18}
+```python {7,12,18}{maxHeight:'390px'}
 # .gitlab-ci.py
 import gcip
 
@@ -2432,7 +2432,7 @@ This may have those of you knowledgeable in yaml thinking...
 layout: default
 ---
 
-```yaml
+```yaml {*}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2466,7 +2466,7 @@ And you'd be correct.
 layout: default
 ---
 
-```yaml {4-5}
+```yaml {4-5}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2502,7 +2502,7 @@ we _can_ create a key with an anchor,
 layout: default
 ---
 
-```yaml {4-5,10,15}
+```yaml {4-5,10,15}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2639,7 +2639,7 @@ Cog is a tool that allows you to use small bits of Python code in static files t
 layout: default
 ---
 
-```yaml {1,8,14}
+```yaml {1,8,14}{maxHeight:'390px'}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2672,7 +2672,7 @@ So in our previous example where we wanted to unify these as a list...
 layout: default
 ---
 
-```yaml {2-4}
+```yaml {2-4}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 #]]]
@@ -2709,7 +2709,7 @@ We would first create a comment with a cog block
 layout: default
 ---
 
-```yaml {3-4}
+```yaml {3-4}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # def app_changelist():
@@ -2748,7 +2748,7 @@ Add a python function to specify our changes
 layout: default
 ---
 
-```yaml {3}
+```yaml {3}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2788,7 +2788,7 @@ import cog, ...
 layout: default
 ---
 
-```yaml {6-7}
+```yaml {6-7}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2830,7 +2830,7 @@ To output the changes on iteration
 layout: default
 ---
 
-```yaml {16-17}
+```yaml {16-17}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2872,7 +2872,7 @@ And then where we've defined our changes,
 layout: default
 ---
 
-```yaml {16-18}
+```yaml {16-18}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2919,7 +2919,7 @@ Then, when we run cog over the file,
 layout: default
 ---
 
-```yaml {16-18}
+```yaml {16-18}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2968,7 +2968,7 @@ And because it works on the file itself, there's no guessing what the generation
 layout: default
 ---
 
-```yaml {19}
+```yaml {19}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3018,7 +3018,7 @@ Meaning that extending our list for one particular case is both easy to do and u
 section: 19
 ---
 
-```yaml {17}
+```yaml {17}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3068,7 +3068,7 @@ Then there's a couple of options you have to protect your platform.
 layout: default
 ---
 
-```yaml {18}
+```yaml {18}{maxHeight:'390px'}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
