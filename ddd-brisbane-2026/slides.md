@@ -26,8 +26,10 @@ Yeah! It's quite fitting for a pipelines talk isn't it?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/intro.svg"-->
+layout: image
+image: /images/intro.svg
+backgroundSize: contain
+---
 
 <!--
 So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time on platform software engineering, that reduces human errors through things like working on pipelines to run tests for a codebase.
@@ -37,33 +39,40 @@ So, [as you may have heard,] I'm Evan, and I've dedicated a fair bit of my time 
 
 ---
 section: 2
+layout: image
+image: /images/oopsies.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/oopsies.svg"-->
 
 <!--
 However, I noticed that I, myself, made quite a few errors.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/superhero.svg"-->
+layout: image
+image: /images/superhero.svg
+backgroundSize: contain
+---
 
 <!--
 And I don't say this because I think I'm this perfect person that should never make errors.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/test.svg"-->
+layout: image
+image: /images/test.svg
+backgroundSize: contain
+---
 
 <!--
 But because it highlighted to me that these errors could've been prevented if there were tests.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/thinking.svg"-->
+layout: image
+image: /images/thinking.svg
+backgroundSize: contain
+---
 
 <!--
 And so these events got me thinking. If platform teams can help engineers run tests, for their codebase, who helps the platform teams, write the tests for, running the tests?
@@ -92,9 +101,10 @@ So today, we'll walk through this journey of mine, in 3 parts.
 
 ---
 section: 3
+layout: image
+image: /images/raised_hands.svg
+backgroundSize: contain
 ---
-
-<!-- .element: data-background-image="images/raised_hands.svg"-->
 
 <!--
 Alright, for this section, could I please ask everyone to raise their hand.
@@ -105,8 +115,10 @@ And I'll also ask to take a photo, cause I didn't think that'd work.
 -->
 
 ---
-
-<!-- .element: data-background-image="images/complete_pipeline.svg"-->
+layout: image
+image: /images/complete_pipeline.svg
+backgroundSize: contain
+---
 
 <!--
 Okay keep your hand raised, if you know what a pipeline is.
@@ -115,8 +127,10 @@ Okay great, don't put your hands down just yet, keep your hands raised
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/running_pipeline.svg"-->
+layout: image
+image: /images/running_pipeline.svg
+backgroundSize: contain
+---
 
 <!--
 if you you've worked with a pipeline.
@@ -125,8 +139,10 @@ Nice, now keep it up,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/writing_pipeline.svg"-->
+layout: image
+image: /images/writing_pipeline.svg
+backgroundSize: contain
+---
 
 <!--
 if you've written a pipeline.
@@ -135,8 +151,10 @@ Cool cool, last one, keep it raised,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_execution_failed.svg
+backgroundSize: contain
+---
 
 <!--
 if you've had a pipeline that you've written fail on you.
@@ -148,17 +166,20 @@ Wow x of you.
 
 ---
 section: 4
+layout: image
+image: /images/full_pipeline.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/full_pipeline.svg"-->
 
 <!--
 Okay, so that we're all on the same level, for those of you who haven't seen a pipeline before, they can look something like this
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/factory_line.svg"-->
+layout: image
+image: /images/factory_line.svg
+backgroundSize: contain
+---
 
 <!--
 And to put it simply, you can think of them as a factory line, where each step performs different operations to get to the final product.
@@ -166,64 +187,80 @@ But in our case, our operations can look something like
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/setup_step.svg"-->
+layout: image
+image: /images/setup_step.svg
+backgroundSize: contain
+---
 
 <!--
 "setup"
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/setup_build_step.svg"-->
+layout: image
+image: /images/setup_build_step.svg
+backgroundSize: contain
+---
 
 <!--
 "build"
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/setup_build_test_step.svg"-->
+layout: image
+image: /images/setup_build_test_step.svg
+backgroundSize: contain
+---
 
 <!--
 "test"
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/setup_build_test_deploy_step.svg"-->
+layout: image
+image: /images/setup_build_test_deploy_step.svg
+backgroundSize: contain
+---
 
 <!--
 with our final operation deploying this built and tested product.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/pipe_sparkles.svg"-->
+layout: image
+image: /images/pipe_sparkles.svg
+backgroundSize: contain
+---
 
 <!--
 So why are pipelines good?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/pipe_shrug.svg"-->
+layout: image
+image: /images/pipe_shrug.svg
+backgroundSize: contain
+---
 
 <!--
 Why should you care about them?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/streamlined.svg"-->
+layout: image
+image: /images/streamlined.svg
+backgroundSize: contain
+---
 
 <!--
 Well, they allow us in one case, to create a streamlined process that automates what would otherwise be very manual.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/quality_control.svg"-->
+layout: image
+image: /images/quality_control.svg
+backgroundSize: contain
+---
 
 <!--
 And in other cases, they can act as a quality control.
@@ -232,32 +269,40 @@ This is similar to a factory line.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/stage_failure.svg"-->
+layout: image
+image: /images/stage_failure.svg
+backgroundSize: contain
+---
 
 <!--
 If any stage of the factory line fails, like building or quality assurance,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/item_push.svg"-->
+layout: image
+image: /images/item_push.svg
+backgroundSize: contain
+---
 
 <!--
 that item, or in our case, some code, won't progress to the next stage, and thus won't be allowed to merge, or even deployed.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_logo.svg"-->
+layout: image
+image: /images/gitlab_logo.svg
+backgroundSize: contain
+---
 
 <!--
 Now while my journey (if you hadn't noticed) takes place within GitLab Pipelines,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_logos.svg"-->
+layout: image
+image: /images/ci_logos.svg
+backgroundSize: contain
+---
 
 <!--
 don't fret if you're a user of other CI tools!
@@ -269,9 +314,10 @@ And, for tools like GitHub Actions, additional resources will be given at the en
 
 ---
 section: 5
+layout: image
+image: /images/gitlab_ci_yml.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_yml.svg"-->
 
 <!--
 So the first part of this journey is making a gitlab pipeline.
@@ -279,8 +325,10 @@ And to do so, we need to create a `.gitlab-ci.yml` file, that gitlab will use as
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/object_json_yaml.svg"-->
+layout: image
+image: /images/object_json_yaml.svg
+backgroundSize: contain
+---
 
 <!--
 If you're new to yaml, think of it as a way to store maps and lists. similar to json, but more human friendly.
@@ -676,17 +724,20 @@ And, it works when it's merged in!
 
 ---
 section: 6
+layout: image
+image: /images/prs_and_time.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/prs_and_time.svg"-->
 
 <!--
 However as new PRs are made, and time goes on,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_execution_failed.svg
+backgroundSize: contain
+---
 
 <!--
 one PR, causes the pipeline to fail.
@@ -694,8 +745,10 @@ Not because the tests themselves pass or fail,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/pipeline_invalid.svg"-->
+layout: image
+image: /images/pipeline_invalid.svg
+backgroundSize: contain
+---
 
 <!--
 but because the pipeline itself is incorrect.
@@ -784,8 +837,10 @@ Now of course, this is only an example to show what can go wrong regardless of h
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/frustrated.svg"-->
+layout: image
+image: /images/frustrated.svg
+backgroundSize: contain
+---
 
 <!--
 But the reason I give this example is because it's a type of problem I've personally experienced!
@@ -794,16 +849,20 @@ And if this wasn't only because I had lost time, then why?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/good_job.svg"-->
+layout: image
+image: /images/good_job.svg
+backgroundSize: contain
+---
 
 <!--
 Well, while it's great that we've figured out why this happened, and that the fix would be a simple one character change,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/reflection.svg"-->
+layout: image
+image: /images/reflection.svg
+backgroundSize: contain
+---
 
 <!--
 in our line of work, it's more important to understand *how* this was allowed to happen in the first place, so it doesn't ever occur again.
@@ -812,8 +871,10 @@ in our line of work, it's more important to understand *how* this was allowed to
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/thought_bubble.svg"-->
+layout: image
+image: /images/thought_bubble.svg
+backgroundSize: contain
+---
 
 <!--
 For this, I'm gonna try hand it over back to you all!
@@ -832,8 +893,10 @@ Can anyone shout out some examples for why this problem could've happened?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/human_error.svg"-->
+layout: image
+image: /images/human_error.svg
+backgroundSize: contain
+---
 
 <!--
 But to me, those are all human errors
@@ -841,16 +904,20 @@ And as you might have heard earlier, I don't like human errors, *especially* one
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/code.svg"-->
+layout: image
+image: /images/code.svg
+backgroundSize: contain
+---
 
 <!--
 So I would say at a higher level, this occurred because while this configuration looks like code,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/code_crossed.svg"-->
+layout: image
+image: /images/code_crossed.svg
+backgroundSize: contain
+---
 
 <!--
 it isn't treated like code.
@@ -858,8 +925,10 @@ Because we're used to testing code with tests,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/thought_bubble.svg"-->
+layout: image
+image: /images/thought_bubble.svg
+backgroundSize: contain
+---
 
 <!--
 but who tests the testing infrastructure with tests?
@@ -873,9 +942,10 @@ Can I get a raise of hands?
 
 ---
 section: 7
+layout: image
+image: /images/thinking.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/thinking.svg"-->
 
 <!--
 So now you might be thinking,  
@@ -922,8 +992,10 @@ So the first method that we'll dive into is linting the ci config file.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/lint.svg"-->
+layout: image
+image: /images/lint.svg
+backgroundSize: contain
+---
 
 <!--
 Linting is great. I **love** linting, because it's a fast method of finding (and sometimes automatically fixing), problems that can be solved before going further.
@@ -931,24 +1003,30 @@ And gitlab offers quite a bit here:
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/vscode_linting_extension.svg"-->
+layout: image
+image: /images/vscode_linting_extension.svg
+backgroundSize: contain
+---
 
 <!--
 They have a VSCode extension
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/vscode_linting_extension_example.svg"-->
+layout: image
+image: /images/vscode_linting_extension_example.svg
+backgroundSize: contain
+---
 
 <!--
 Which will tell you within your editor tell you whether your yaml is setup correctly
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_syntax_checker.svg"-->
+layout: image
+image: /images/gitlab_pipeline_syntax_checker.svg
+backgroundSize: contain
+---
 
 <!--
 They have a pipeline syntax checker,
@@ -957,8 +1035,10 @@ Which will do the same thing as the extension, but through a web ui, and api end
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_visualiser.svg"-->
+layout: image
+image: /images/gitlab_pipeline_visualiser.svg
+backgroundSize: contain
+---
 
 <!--
 They also have a visualiser,
@@ -967,8 +1047,10 @@ which gives a quick way of helping you see the dependencies between jobs
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_validator.svg"-->
+layout: image
+image: /images/gitlab_pipeline_validator.svg
+backgroundSize: contain
+---
 
 <!--
 They have a validator,
@@ -977,8 +1059,10 @@ Which simulates a git push event on the default branch, with rules and needs eva
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_expander.svg"-->
+layout: image
+image: /images/gitlab_pipeline_expander.svg
+backgroundSize: contain
+---
 
 <!--
 And finally they have a tool to expand your yaml into it's full configuration,
@@ -987,56 +1071,70 @@ Which helps you see what the pipeline looks like with all the special syntax exp
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/downsides.svg"-->
+layout: image
+image: /images/downsides.svg
+backgroundSize: contain
+---
 
 <!--
 However these methods have their downsides too:
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/intellij_crossed.svg"-->
+layout: image
+image: /images/intellij_crossed.svg
+backgroundSize: contain
+---
 
 <!--
 The VSCode extension, as you might have guessed, is only officially made for VSCode
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_syntax_checker_success.svg"-->
+layout: image
+image: /images/gitlab_pipeline_syntax_checker_success.svg
+backgroundSize: contain
+---
 
 <!--
 And even if you instead use the pipeline syntax checker, whether it be the web ui, or the endpoint, they only tell you if there's something wrong with your schema, not with how it runs.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_visualiser_arrow_pipeline_failure.svg"-->
+layout: image
+image: /images/gitlab_pipeline_visualiser_arrow_pipeline_failure.svg
+backgroundSize: contain
+---
 
 <!--
 The visualiser, while handy, doesn't help you understand the issues we had around dependencies with needs and rules, and thus won't uncover those issues upfront.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_validator_success.svg"-->
+layout: image
+image: /images/gitlab_pipeline_validator_success.svg
+backgroundSize: contain
+---
 
 <!--
 The validator, while it says it simulates and evaluates rules and needs (unless I'm misunderstanding, feel free to correct me at the end) wasn't able to pickup on that problem (and also doesn't have an api endpoint, to make testing easier)
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_pipeline_expander_extends.svg"-->
+layout: image
+image: /images/gitlab_pipeline_expander_extends.svg
+backgroundSize: contain
+---
 
 <!--
 And with the full configuration tool, expansion is limited, and won't expand out defaults, (technically each individual job has an image).
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/puzzle_piece.svg"-->
+layout: image
+image: /images/puzzle_piece.svg
+backgroundSize: contain
+---
 
 <!--
 So while linting tools do have their use, they are only a single piece of the puzzle, just like how we can't expect linters to catch logic errors.
@@ -1055,64 +1153,80 @@ So if linters are lacking due to not testing end to end, why don't we instead tr
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_run.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_run.svg
+backgroundSize: contain
+---
 
 <!--
 Well, the good news is, gitlab lets us run a pipeline from a particular branch, such as the one that is introducing the ci config file changes
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_run_variables.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_run_variables.svg
+backgroundSize: contain
+---
 
 <!--
 And, it also let's us specify variables, for example, overriding those that would be predefined by gitlab.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_running.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_running.svg
+backgroundSize: contain
+---
 
 <!--
 This is great because it lets us run a pipeline identically to how one would be run by gitlab, such as a post merge pipeline.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_running_branch.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_running_branch.svg
+backgroundSize: contain
+---
 
 <!--
 However, there is one limitation being that this pipeline depends on the changes for that particular branch,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed_crossed.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_execution_failed_crossed.svg
+backgroundSize: contain
+---
 
 <!--
 And therefore, we won't be able to catch our problem, as our branch doesn't introduce the changes that are needed to reveal that bug.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/branch_with_changes_diagram.svg"-->
+layout: image
+image: /images/branch_with_changes_diagram.svg
+backgroundSize: contain
+---
 
 <!--
 However there is another way, and that is by creating a branch off of our new ci config file, with any changes that are needed, such as updating a file that we expect to run in the test directory.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed_pipeline.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_execution_failed_pipeline.svg
+backgroundSize: contain
+---
 
 <!--
 This is great, as it would reveal our problem,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/complex_pipes.svg"-->
+layout: image
+image: /images/complex_pipes.svg
+backgroundSize: contain
+---
 
 <!--
 However, you may have noticed that this is an intensive and costly process, as it's slow and manual, and may not scale with all of the combinations of changes, that may be introduced with lots of different rules.
@@ -1131,8 +1245,10 @@ So, for our third method, we have something in between, something that's not as 
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab-ci-local_and_gitlabci-local.svg"-->
+layout: image
+image: /images/gitlab-ci-local_and_gitlabci-local.svg
+backgroundSize: contain
+---
 
 <!--
 For that, we can use tools like gitlab-ci-local and gitlabci-local.
@@ -1140,40 +1256,50 @@ Yes you heard me right, the difference is a dash…
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab-ci-local.svg"-->
+layout: image
+image: /images/gitlab-ci-local.svg
+backgroundSize: contain
+---
 
 <!--
 gitlab dash ci dash local, is a typescript tool made by (Mass Yon Nielsen) Mads Jon Nielsen in January of 2020
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlabci-local.svg"-->
+layout: image
+image: /images/gitlabci-local.svg
+backgroundSize: contain
+---
 
 <!--
 And gitlabci dash local, is a python tool made by Adrian DC in January 2020.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/bizarre.svg"-->
+layout: image
+image: /images/bizarre.svg
+backgroundSize: contain
+---
 
 <!--
 Honestly it's bizarre how just how similar these tools are, both in what they do, and when they were made.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab-ci-local_output_and_gitlabci-local_output.svg"-->
+layout: image
+image: /images/gitlab-ci-local_output_and_gitlabci-local_output.svg
+backgroundSize: contain
+---
 
 <!--
 But anyways, these two tools let us run the individual jobs of our gitlab pipelines, locally, using containers.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/long_live_the_king.svg"-->
+layout: image
+image: /images/long_live_the_king.svg
+backgroundSize: contain
+---
 
 <!--
 The core benefits of these tools are that they let us remove the dependency on gitlab.
@@ -1184,32 +1310,40 @@ This is helpful as it quickens the feedback loop, by allowing us to locally repl
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/downsides.svg"-->
+layout: image
+image: /images/downsides.svg
+backgroundSize: contain
+---
 
 <!--
 That's not to say that these tools don't have downsides
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/simulation.svg"-->
+layout: image
+image: /images/simulation.svg
+backgroundSize: contain
+---
 
 <!--
 Being simulators, they're not always going to match the real thing
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/hourglass.svg"-->
+layout: image
+image: /images/hourglass.svg
+backgroundSize: contain
+---
 
 <!--
 And if we're solely testing our pipeline changes, they don't give us any static information in advance, and require us to wait for jobs to finish running.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_pipeline_execution_failed.svg"-->
+layout: image
+image: /images/gitlab_ci_pipeline_execution_failed.svg
+backgroundSize: contain
+---
 
 <!--
 So in our examples above, both of these tools also won't help us uncover our problem, even though they might have other benefits.
@@ -1228,16 +1362,20 @@ So with the forth method, let's explore a different kind of testing.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/404.svg"-->
+layout: image
+image: /images/404.svg
+backgroundSize: contain
+---
 
 <!--
 In this front, I wasn't able to find any kind of static analysis testing tools for ci config files, and thus to solve this problem, I took the initiative to make a tool myself...
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test.png"-->
+layout: image
+image: /images/ci_test.png
+backgroundSize: contain
+---
 
 <!--
 ci-test!
@@ -1328,16 +1466,20 @@ So really, we should have seen this instead, where all the jobs are defined unde
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/downsides.svg"-->
+layout: image
+image: /images/downsides.svg
+backgroundSize: contain
+---
 
 <!--
 Of course like everything else, it has it's drawbacks and can't solely be depended on, since it doesn't run in integration like the other methods.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/confidence.svg"-->
+layout: image
+image: /images/confidence.svg
+backgroundSize: contain
+---
 
 <!--
 But it is something simple, that will allow us, to quickly iterate, on rules with confidence, which was something that we couldn't do before.
@@ -1347,33 +1489,40 @@ But it is something simple, that will allow us, to quickly iterate, on rules wit
 
 ---
 section: 12
+layout: image
+image: /images/ci_test_refactor_0.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_0.svg"-->
 
 <!--
 And it's true value was highlighted in one of my previous engagements.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_1.svg"-->
+layout: image
+image: /images/ci_test_refactor_1.svg
+backgroundSize: contain
+---
 
 <!--
 Their CI config file,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_2.svg"-->
+layout: image
+image: /images/ci_test_refactor_2.svg
+backgroundSize: contain
+---
 
 <!--
 was thousands of lines of unmaintainable yaml,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_3.svg"-->
+layout: image
+image: /images/ci_test_refactor_3.svg
+backgroundSize: contain
+---
 
 <!--
 And no one wanted to make CI changes.
@@ -1383,144 +1532,180 @@ for the case where, not if,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_4.svg"-->
+layout: image
+image: /images/ci_test_refactor_4.svg
+backgroundSize: contain
+---
 
 <!--
 but when, something unexpected would go wrong.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_5.svg"-->
+layout: image
+image: /images/ci_test_refactor_5.svg
+backgroundSize: contain
+---
 
 <!--
 This giant file handled deployments and everything else.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_6.svg"-->
+layout: image
+image: /images/ci_test_refactor_6.svg
+backgroundSize: contain
+---
 
 <!--
 And it was scary because if you wanted to make changes to merges,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_7.svg"-->
+layout: image
+image: /images/ci_test_refactor_7.svg
+backgroundSize: contain
+---
 
 <!--
 you didn't know if you'd be affecting deployments.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_8.svg"-->
+layout: image
+image: /images/ci_test_refactor_8.svg
+backgroundSize: contain
+---
 
 <!--
 Now because ci test is able to take snapshots to show what's changed, you could then do something clever.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_9.svg"-->
+layout: image
+image: /images/ci_test_refactor_9.svg
+backgroundSize: contain
+---
 
 <!--
 Say the config file is full of changes related to deployment, and everything else.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_10.svg"-->
+layout: image
+image: /images/ci_test_refactor_10.svg
+backgroundSize: contain
+---
 
 <!--
 And you wanted to refactor it to extract out all the changes related to deployment.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_11.svg"-->
+layout: image
+image: /images/ci_test_refactor_11.svg
+backgroundSize: contain
+---
 
 <!--
 First, what you would do, is make two copies of the config file.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_12.svg"-->
+layout: image
+image: /images/ci_test_refactor_12.svg
+backgroundSize: contain
+---
 
 <!--
 One to contain everything related to deployments,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_13.svg"-->
+layout: image
+image: /images/ci_test_refactor_13.svg
+backgroundSize: contain
+---
 
 <!--
 and the other, everything not related.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_14.svg"-->
+layout: image
+image: /images/ci_test_refactor_14.svg
+backgroundSize: contain
+---
 
 <!--
 Then you'd reduce the original config
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_15.svg"-->
+layout: image
+image: /images/ci_test_refactor_15.svg
+backgroundSize: contain
+---
 
 <!--
 to include these files based on the workflow.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_16.svg"-->
+layout: image
+image: /images/ci_test_refactor_16.svg
+backgroundSize: contain
+---
 
 <!--
 Importantly at this step, when ci test takes a snapshot, the expected output will be the same.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_17.svg"-->
+layout: image
+image: /images/ci_test_refactor_17.svg
+backgroundSize: contain
+---
 
 <!--
 But now, ci test can be configured to take different snapshots, such as for the non deploy path,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_18.svg"-->
+layout: image
+image: /images/ci_test_refactor_18.svg
+backgroundSize: contain
+---
 
 <!--
 or for the deploy path.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_19.svg"-->
+layout: image
+image: /images/ci_test_refactor_19.svg
+backgroundSize: contain
+---
 
 <!--
 So now, if we want to refactor the two different configs,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_20.svg"-->
+layout: image
+image: /images/ci_test_refactor_20.svg
+backgroundSize: contain
+---
 
 <!--
 Removing anything that's unnecessary...
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ci_test_refactor_21.svg"-->
+layout: image
+image: /images/ci_test_refactor_21.svg
+backgroundSize: contain
+---
 
 <!--
 the tests, (or in this case the output jobs,) don't change, signalling a safe refactor.
@@ -1529,16 +1714,20 @@ the tests, (or in this case the output jobs,) don't change, signalling a safe re
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/notice_mark.svg"-->
+layout: image
+image: /images/notice_mark.svg
+backgroundSize: contain
+---
 
 <!--
 That all being said, don't take that as me going on the record to say that this will be the holy grail.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/contribute.svg"-->
+layout: image
+image: /images/contribute.svg
+backgroundSize: contain
+---
 
 <!--
 There is plenty of room for improvement, and it's been written in a way to be highly extensible.
@@ -1561,8 +1750,10 @@ The last method I'll cover, is using tools to dynamically generate pipelines usi
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_python_library.svg"-->
+layout: image
+image: /images/gitlab_ci_python_library.svg
+backgroundSize: contain
+---
 
 <!--
 gitlab-ci-python-library is the only up to date library I could find to do this,
@@ -1573,16 +1764,20 @@ Anyways, gitlab-ci-python-library, or gcip, is a library from Thomas (Schtienbah
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/question_mark.svg"-->
+layout: image
+image: /images/question_mark.svg
+backgroundSize: contain
+---
 
 <!--
 Why would you want this?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/quote_box.svg"-->
+layout: image
+image: /images/quote_box.svg
+backgroundSize: contain
+---
 > Creating your pipelines in Python code allows you all the features of that language, like:
 > * re-use code (DRY - Don't Repeat Yourself) <!-- .element: class="fragment" -->
 > * use variables, control flow (if-then-else, loops, ...), complex data structures, input/output, error handling, ... <!-- .element: class="fragment" -->
@@ -1608,73 +1803,90 @@ Well if we quote the library, we can utilise all the features of python such as:
 
 ---
 section: 14
+layout: image
+image: /images/question_mark.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/question_mark.svg"-->
 
 <!--
 So how do generated pipelines work?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_0.svg"-->
+layout: image
+image: /images/gcip_diagram_0.svg
+backgroundSize: contain
+---
 
 <!--
 In our ci config file, where we've been defining our testing jobs,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_1.svg"-->
+layout: image
+image: /images/gcip_diagram_1.svg
+backgroundSize: contain
+---
 
 <!--
 we instead define a generate pipeline job,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_2.svg"-->
+layout: image
+image: /images/gcip_diagram_2.svg
+backgroundSize: contain
+---
 
 <!--
 which runs our python ci config file,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_3.svg"-->
+layout: image
+image: /images/gcip_diagram_3.svg
+backgroundSize: contain
+---
 
 <!--
 to create a generated config ci file, that contains all of the previous jobs that we want to run.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_4.svg"-->
+layout: image
+image: /images/gcip_diagram_4.svg
+backgroundSize: contain
+---
 
 <!--
 The original ci config file had also defined a run pipeline job,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_5.svg"-->
+layout: image
+image: /images/gcip_diagram_5.svg
+backgroundSize: contain
+---
 
 <!--
 that, has a needs on the generate pipeline job,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_6.svg"-->
+layout: image
+image: /images/gcip_diagram_6.svg
+backgroundSize: contain
+---
 
 <!--
 as it uses, the generated ci config file,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_diagram_7.svg"-->
+layout: image
+image: /images/gcip_diagram_7.svg
+backgroundSize: contain
+---
 
 <!--
 to create a child pipeline that runs all of the previous jobs that we wanted to run.
@@ -1684,9 +1896,10 @@ to create a child pipeline that runs all of the previous jobs that we wanted to 
 
 ---
 section: 15
+layout: image
+image: /images/python_not_yaml.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/python_not_yaml.svg"-->
 
 <!--
 So what would it look like to replace our yaml with python?
@@ -2017,32 +2230,40 @@ And then writing that pipeline out to yaml
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_gcip_pipeline_success.svg"-->
+layout: image
+image: /images/gitlab_ci_gcip_pipeline_success.svg
+backgroundSize: contain
+---
 
 <!--
 And sure enough, we can have this pipeline execute in the repo,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_gcip_pipeline_success_expanded.svg"-->
+layout: image
+image: /images/gitlab_ci_gcip_pipeline_success_expanded.svg
+backgroundSize: contain
+---
 
 <!--
 with all of our expected downstream jobs.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/plumber_thinking.svg"-->
+layout: image
+image: /images/plumber_thinking.svg
+backgroundSize: contain
+---
 
 <!--
 However, has this caused our initial problem to go away?
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_ci_gcip_pipeline_fail.svg"-->
+layout: image
+image: /images/gitlab_ci_gcip_pipeline_fail.svg
+backgroundSize: contain
+---
 
 <!--
 Well, it doesn't give us any protections from the pipeline failing to run, because again, there were no reasons for it to run correctly, since there were no `.pu` changes.
@@ -2052,9 +2273,10 @@ Well, it doesn't give us any protections from the pipeline failing to run, becau
 
 ---
 section: 16
+layout: image
+image: /images/disappointed.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/disappointed.svg"-->
 
 <!--
 So unfortunately, it seems like generated pipelines won't directly solve our problem.
@@ -2396,24 +2618,30 @@ and reference them with aliases to do the same thing and solve our problem.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/yaml_list_error.svg"-->
+layout: image
+image: /images/yaml_list_error.svg
+backgroundSize: contain
+---
 
 <!--
 But if we wanted to do something like extend this change set, it wouldn't be as easy, as yaml doesn't allow merging of lists.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gitlab_yaml_list_docs.svg"-->
+layout: image
+image: /images/gitlab_yaml_list_docs.svg
+backgroundSize: contain
+---
 
 <!--
 Well that's not entirely correct, gitlab does allow you to merge lists,
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/yaml_list_invalid.svg"-->
+layout: image
+image: /images/yaml_list_invalid.svg
+backgroundSize: contain
+---
 
 <!--
 However this doesn't work for all cases, as it won't result in valid yaml.
@@ -2423,9 +2651,10 @@ However this doesn't work for all cases, as it won't result in valid yaml.
 
 ---
 section: 17
+layout: image
+image: /images/thought_bubble.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/thought_bubble.svg"-->
 
 <!--
 So are generated pipelines a good idea?
@@ -2433,16 +2662,20 @@ I think the authors have a good view of this, which I'll do my best to summarise
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_quote_cons.svg"-->
+layout: image
+image: /images/gcip_quote_cons.svg
+backgroundSize: contain
+---
 
 <!--
 The cons are that it could allow for writing complex pipelines that nobody else understands, when they should be basic things that build and test your code and shouldn't be in code too.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_quote_pros.svg"-->
+layout: image
+image: /images/gcip_quote_pros.svg
+backgroundSize: contain
+---
 
 <!--
 But,
@@ -2454,8 +2687,10 @@ maybe writing them in code is cleaner.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/gcip_quote_summary.svg"-->
+layout: image
+image: /images/gcip_quote_summary.svg
+backgroundSize: contain
+---
 
 <!--
 Importantly, it's a choice that's up to you, your team, and, the situation.
@@ -2465,17 +2700,20 @@ Importantly, it's a choice that's up to you, your team, and, the situation.
 
 ---
 section: 18
+layout: image
+image: /images/thinking.svg
+backgroundSize: contain
 ---
-
-<!-- .slide: data-background-image="images/thinking.svg"-->
 
 <!--
 If you do see the need to integrate some kind of programming in your configuration, but feel like pipeline generation is too much, there is one other approach to consider.
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/cog.png"-->
+layout: image
+image: /images/cog.png
+backgroundSize: contain
+---
 
 <!--
 And that is using Cog.
@@ -3031,8 +3269,10 @@ But at the end of the day, all these methods, are only tools to assist us in our
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/complex_pipes.svg"-->
+layout: image
+image: /images/complex_pipes.svg
+backgroundSize: contain
+---
 
 <!--
 And if the underlying problem is the thousands of lines of CI configuration, it might help to start there instead,
@@ -3057,8 +3297,10 @@ And so if your pipeline is as simple as this, it may very well be reasonable to 
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/simplicity.svg"-->
+layout: image
+image: /images/simplicity.svg
+backgroundSize: contain
+---
 
 <!--
 Thus, my view from all of this is that simplicity is key.
@@ -3089,16 +3331,20 @@ You can also subscribe to my mailing list on nohumanerrors.com, or find me onlin
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/questions.svg"-->
+layout: image
+image: /images/questions.svg
+backgroundSize: contain
+---
 
 <!--
 And, if you're still wondering who tests the testers, I'll be around for questions!
 -->
 
 ---
-
-<!-- .slide: data-background-image="images/ddd_sponsors.png"-->
+layout: image
+image: /images/ddd_sponsors.png
+backgroundSize: contain
+---
 
 <!--
 Thanks to all the sponsors of DDD for bringing us all together,
