@@ -336,77 +336,72 @@ https://carbon.now.sh/?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=ya
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[1]
+```yaml {1}
 # .gitlab-ci.yml
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 We'll make a simple one now, that one can use on their repo to ensure tests pass before merging
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[2]
+```yaml {2}
 # .gitlab-ci.yml
 image: python:latest
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Here we define that we want jobs to run with a docker image that contains the latest version of your programming language of choice, which for this talk, will be python.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[4]
+```yaml {4}
 # .gitlab-ci.yml
 image: python:latest
 
 test-job:
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Then we define a job, with the name test-job
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[5]
+```yaml {5}
 # .gitlab-ci.yml
 image: python:latest
 
 test-job:
     script: "python test.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 And below we define "script" as the command to run for that job, which for us will be a python file called `test.py`
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[]
+```yaml
 # .gitlab-ci.yml
 image: python:latest
 
 test-job:
     script: "python test.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Of course this is probably the simplest pipeline we could create, and thus shouldn't be used as a reference.
@@ -419,9 +414,10 @@ That being said, given how simple this example pipeline is, it probably doesn't 
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[6]
+```yaml {6}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -429,17 +425,16 @@ test-job:
     script: "python test.py"
     rules:
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 To do this, we'll add some rules, which decide on what conditions the job runs
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[7]
+```yaml {7}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -448,17 +443,16 @@ test-job:
     rules:
         - changes:
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 We'll then specify that we want the job to run whenever there's changes that have been made.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[8]
+```yaml {8}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -468,17 +462,16 @@ test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Such as changes to any python files.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[]
+```yaml
 # .gitlab-ci.yml
 image: python:latest
 
@@ -488,8 +481,6 @@ test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 This is so that we can speed up our pipelines by not unnecessarily running a costly job, on unrelated changes, to other files within our repo, such as documentation.
@@ -497,9 +488,10 @@ Another thing we might need to extend on, is having to run different types of te
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[10]
+```yaml {10}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -512,16 +504,15 @@ test-job:
 database-test-job:
 ```
 
-<!-- .element: data-id="simple-ci" -->
-
 <!--
 For example, a `database-test-job`
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[10-14]
+```yaml {10-14}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -538,16 +529,15 @@ database-test-job:
             - "**/*.py"
 ```
 
-<!-- .element: data-id="simple-ci" -->
-
 <!--
 which we could setup in a similar way, except... it might depend on some test databases to have been created.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[10]
+```yaml {10}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -573,17 +563,15 @@ database-test-job:
  
 ```
 
-<!-- .element: data-no-trim -->
-<!-- .element: data-id="simple-ci" -->
-
 <!--
 So for that, we'll require a new setup job to be run,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[10-15]
+```yaml {10-15}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -606,16 +594,15 @@ database-test-job:
             - "**/*.py"
 ```
 
-<!-- .element: data-id="simple-ci" -->
-
 <!--
 which needs to be run under the same set of changes,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[10-20]
+```yaml {10-20}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -638,16 +625,15 @@ database-test-job:
             - "**/*.py"
 ```
 
-<!-- .element: data-id="simple-ci" -->
-
 <!--
 and additionally, we need some way of specifying that the `database-test-job` can only run once the `database-setup-job` is finished.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[18-19]
+```yaml {18-19}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -671,8 +657,6 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 To do that, we can use the `needs` keyword, which specifies that the `database-test-job` "needs" the `database-setup-job` to finish successfully before the tests can be started and completed correctly.
@@ -681,9 +665,10 @@ With the idea being that we want as much running in parallel as possible, such t
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[]
+```yaml
 # .gitlab-ci.yml
 image: python:latest
 
@@ -707,8 +692,6 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 And so now, what we've landed on is great.
@@ -757,9 +740,10 @@ Now if we go back to our pipeline definition,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[7-22]
+```yaml {7-22}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -783,8 +767,6 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Can anyone tell me why it didn't run?
@@ -797,9 +779,10 @@ Can anyone tell me why it didn't run?
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[8,14,22]
+```yaml {8,14,22}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -823,8 +806,6 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="simple-ci" -->
 
 <!--
 Because there was a typo in the changes.
@@ -1387,8 +1368,7 @@ By analysing the ci config file, and, how it's changed, we can gain a better und
 
 ---
 
-<!-- .element: data-auto-animate -->
-```json[]
+```json
 [
   {
     "changes": [
@@ -1401,16 +1381,13 @@ By analysing the ci config file, and, how it's changed, we can gain a better und
 ]
 ```
 
-<!-- .element: data-id="ci-test-output" -->
-
 <!--
 As an example, it can produce snapshots of the pipeline, by collating relevant information, such as pairing together lists of jobs and changes.
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```json[7,10-17]
+```json {7,10-17}
 [
   {
     "changes": [
@@ -1432,8 +1409,6 @@ As an example, it can produce snapshots of the pipeline, by collating relevant i
 ]
 ```
 
-<!-- .element: data-id="ci-test-output" -->
-
 <!--
 Thus using our example, when the change was made, we would get this diff.
 This immediately lets us know that an additional rule set was created that is different from the expected rule set from from all other jobs.
@@ -1441,8 +1416,7 @@ This immediately lets us know that an additional rule set was created that is di
 
 ---
 
-<!-- .element: data-auto-animate -->
-```json[]
+```json
 [
   {
     "changes": [
@@ -1456,8 +1430,6 @@ This immediately lets us know that an additional rule set was created that is di
   }
 ]
 ```
-
-<!-- .element: data-id="ci-test-output" -->
 
 <!--
 So really, we should have seen this instead, where all the jobs are defined under the same changes.
@@ -1915,12 +1887,9 @@ So what would it look like to replace our yaml with python?
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[1]
+```python {1}
 # .gitlab-ci.py
 ```
-
-<!-- .element: data-id="python-ci" -->
 
 <!--
 Well first we create a `.gitlab-ci.py` file,
@@ -1928,13 +1897,10 @@ Well first we create a `.gitlab-ci.py` file,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[2]
+```python {2}
 # .gitlab-ci.py
 import gcip
 ```
-
-<!-- .element: data-id="python-ci" -->
 
 <!--
 then import the library,
@@ -1942,15 +1908,12 @@ then import the library,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[4]
+```python {4}
 # .gitlab-ci.py
 import gcip
 
 pipeline = gcip.Pipeline()
 ```
-
-<!-- .element: data-id="python-ci" -->
 
 <!--
 create a pipeline,
@@ -1958,8 +1921,7 @@ create a pipeline,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[5]
+```python {5}
 # .gitlab-ci.py
 import gcip
 
@@ -1967,16 +1929,13 @@ pipeline = gcip.Pipeline()
 pipeline.initialize_image("python:latest")
 ```
 
-<!-- .element: data-id="python-ci" -->
-
 <!--
 specify the default image,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[7-8]
+```python {7-8}
 # .gitlab-ci.py
 import gcip
 
@@ -1988,16 +1947,13 @@ test_job = gcip.Job(
 
 ```
 
-<!-- .element: data-id="python-ci" -->
-
 <!--
 then, we create a job,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[8]
+```python {8}
 # .gitlab-ci.py
 import gcip
 
@@ -2010,16 +1966,13 @@ test_job = gcip.Job(
 
 ```
 
-<!-- .element: data-id="python-ci" -->
-
 <!--
 give it a name,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[9]
+```python {9}
 # .gitlab-ci.py
 import gcip
 
@@ -2033,16 +1986,13 @@ test_job = gcip.Job(
 
 ```
 
-<!-- .element: data-id="python-ci" -->
-
 <!--
 add a script,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[10]
+```python {10}
 # .gitlab-ci.py
 import gcip
 
@@ -2056,16 +2006,13 @@ test_job = gcip.Job(
 )
 ```
 
-<!-- .element: data-id="python-ci" -->
-
 <!--
 and it's rules,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[13-23]
+```python {13-23}
 # .gitlab-ci.py
 import gcip
 
@@ -2098,17 +2045,13 @@ database_test_job = gcip.Job(
 
 ```
 
-<!-- .element: data-no-trim -->
-<!-- .element: data-id="python-ci" -->
-
 <!--
 doing the same for the other jobs
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[22]
+```python {22}
 # .gitlab-ci.py
 import gcip
 
@@ -2142,17 +2085,13 @@ database_test_job = gcip.Job(
 
 ```
 
-<!-- .element: data-no-trim -->
-<!-- .element: data-id="python-ci" -->
-
 <!--
 add in our needs
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[26-30]
+```python {26-30}
 # .gitlab-ci.py
 import gcip
 
@@ -2186,17 +2125,13 @@ pipeline.add_children(
 
 ```
 
-<!-- .element: data-no-trim -->
-<!-- .element: data-id="python-ci" -->
-
 <!--
 before finally adding all jobs as children of the pipeline
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[32]
+```python {32}
 # .gitlab-ci.py
 import gcip
 
@@ -2230,8 +2165,6 @@ pipeline.add_children(
 
 pipeline.write_yaml()
 ```
-
-<!-- .element: data-id="python-ci" -->
 
 <!--
 And then writing that pipeline out to yaml
@@ -2294,12 +2227,9 @@ That being said, they can help!
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[1]
+```python {1}
 # pipeline_test.py
 ```
-
-<!-- .element: data-id="pipeline-test" -->
 
 <!--
 As the authors mentioned earlier, this programmatic approach does let you,
@@ -2307,13 +2237,10 @@ As the authors mentioned earlier, this programmatic approach does let you,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[2]
+```python {2}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
 ```
-
-<!-- .element: data-id="pipeline-test" -->
 
 <!--
 import your pipeline,
@@ -2321,8 +2248,7 @@ import your pipeline,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[4-8]
+```python {4-8}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
 
@@ -2334,8 +2260,6 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 
 ...
 ```
-
-<!-- .element: data-id="pipeline-test" -->
 
 <!--
 and perform tests on it,
@@ -2343,8 +2267,7 @@ and perform tests on it,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[6]
+```python {6}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
 
@@ -2356,8 +2279,6 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 
 ...
 ```
-
-<!-- .element: data-id="pipeline-test" -->
 
 <!--
 allowing us to do something similar like we've done with ci-test.
@@ -2365,8 +2286,7 @@ allowing us to do something similar like we've done with ci-test.
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[]
+```python
 # pipeline_test.py
 from pipeline_ci_config import pipeline
 
@@ -2379,16 +2299,13 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 ...
 ```
 
-<!-- .element: data-id="pipeline-test" -->
-
 <!--
 However, there is one other thing to consider...
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[]
+```python
 # .gitlab-ci.py
 import gcip
 
@@ -2421,8 +2338,6 @@ pipeline.add_children(
 )
 pipeline.write_yaml()
 ```
-
-<!-- .element: data-id="python-changeset" -->
 
 <!--
 Since our pipeline is now in Python,
@@ -2430,8 +2345,7 @@ Since our pipeline is now in Python,
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[7]
+```python {7}
 # .gitlab-ci.py
 import gcip
 
@@ -2467,16 +2381,13 @@ pipeline.add_children(
 pipeline.write_yaml()
 ```
 
-<!-- .element: data-id="python-changeset" -->
-
 <!--
 they do let us easily create a changeset using a list,
 -->
 
 ---
 
-<!-- .element: data-auto-animate -->
-```python[7,12,18]
+```python {7,12,18}
 # .gitlab-ci.py
 import gcip
 
@@ -2512,17 +2423,16 @@ pipeline.add_children(
 pipeline.write_yaml()
 ```
 
-<!-- .element: data-id="python-changeset" -->
-
 <!--
 that we can apply everywhere, and thus help alleviate any rule mismatches, as all the rules will now be the same.
 This may have those of you knowledgeable in yaml thinking...
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[]
+```yaml
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2546,8 +2456,6 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 "Doesn't yaml also let you create a list that can be referenced?"
@@ -2555,9 +2463,10 @@ And you'd be correct.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[4-5]
+```yaml {4-5}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2585,16 +2494,15 @@ database-test-job:
             - "**/*.py"
 ```
 
-<!-- .element: data-id="yaml-changeset" -->
-
 <!--
 we _can_ create a key with an anchor,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml[4-5,10,15]
+```yaml {4-5,10,15}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2618,8 +2526,6 @@ database-test-job:
     rules:
         - changes: *app-changelist
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 and reference them with aliases to do the same thing and solve our problem.
@@ -2730,9 +2636,10 @@ Cog is a tool that allows you to use small bits of Python code in static files t
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [1,8,14]
+```yaml {1,8,14}
 # .gitlab-ci.yml
 image: python:latest
 
@@ -2757,16 +2664,15 @@ database-test-job:
             - "**/*.py"
 ```
 
-<!-- .element: data-id="yaml-changeset" -->
-
 <!--
 So in our previous example where we wanted to unify these as a list...
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [2-4]
+```yaml {2-4}
 # .gitlab-ci.yml
 #[[[cog
 #]]]
@@ -2794,17 +2700,16 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 We would first create a comment with a cog block
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [3-4]
+```yaml {3-4}
 # .gitlab-ci.yml
 #[[[cog
 # def app_changelist():
@@ -2834,17 +2739,16 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 Add a python function to specify our changes
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [3]
+```yaml {3}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2875,17 +2779,16 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 import cog, ...
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [6-7]
+```yaml {6-7}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2918,17 +2821,16 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 To output the changes on iteration
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [16-17]
+```yaml {16-17}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -2961,17 +2863,16 @@ database-test-job:
         - changes:
             - "**/*.py"
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 And then where we've defined our changes,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [16-18]
+```yaml {16-18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3007,8 +2908,6 @@ database-test-job:
             #[[[cog app_changelist()]]]
             #[[[end]]]
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 we can use cog to run that function to output the change list.
@@ -3017,9 +2916,10 @@ Then, when we run cog over the file,
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [16-18]
+```yaml {16-18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3058,8 +2958,6 @@ database-test-job:
             #[[[end]]]
 ```
 
-<!-- .element: data-id="yaml-changeset" -->
-
 <!--
 It'll update what's between the tags with our generated output.
 
@@ -3067,9 +2965,10 @@ And because it works on the file itself, there's no guessing what the generation
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [19]
+```yaml {19}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3108,8 +3007,6 @@ database-test-job:
             - "**/*.py"
             #[[[end]]]
 ```
-
-<!-- .element: data-id="yaml-changeset" -->
 
 <!--
 Meaning that extending our list for one particular case is both easy to do and understand!
@@ -3121,8 +3018,7 @@ Meaning that extending our list for one particular case is both easy to do and u
 section: 19
 ---
 
-<!-- .element: data-auto-animate --> 
-```yaml [17]
+```yaml {17}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3162,8 +3058,6 @@ database-test-job:
             #[[[end]]]
 ```
 
-<!-- .element: data-id="yaml-changeset-edit" -->
-
 <!--
 If you're wondering "What if someone accidentally changes what's between the tags?" 
 
@@ -3171,9 +3065,10 @@ Then there's a couple of options you have to protect your platform.
 -->
 
 ---
+layout: default
+---
 
-<!-- .element: data-auto-animate -->
-```yaml [18]
+```yaml {18}
 # .gitlab-ci.yml
 #[[[cog
 # import cog
@@ -3213,15 +3108,13 @@ database-test-job:
             #[[[end]]] (sum: KXQVeDRZak)
 ```
 
-<!-- .element: data-id="yaml-changeset-edit" -->
-
 <!--
 Such as enabling the checksum flag, which, when running cog...
 -->
 
 ---
 
-``` sh
+```sh
 .gitlab-ci.yml(18):
     Output has been edited!
     Delete old checksum to unprotect.
@@ -3233,7 +3126,7 @@ will cause it to complain about an unexpected edit.
 
 ---
 
-```diff [2,9-10,14]
+```diff {2,9-10,14}
 -diff .gitlab-ci.cog.yml
 Checking .gitlab-ci.cog.yml  (changed)
 --- current .gitlab-ci.cog.yml
@@ -3291,8 +3184,10 @@ Choosing one tool, over another, will _still_ be adding another component, to so
 -->
 
 ---
+layout: default
+---
 
-```yaml[]
+```yaml
 # .gitlab-ci.yml
 image: python:latest
 
