@@ -1291,7 +1291,9 @@ By analysing the ci config file, and, how it's changed, we can gain a better und
 -->
 
 ---
+---
 
+````md magic-move
 ```json
 [
   {
@@ -1304,14 +1306,7 @@ By analysing the ci config file, and, how it's changed, we can gain a better und
   }
 ]
 ```
-
-<!--
-As an example, it can produce snapshots of the pipeline, by collating relevant information, such as pairing together lists of jobs and changes.
--->
-
----
-
-```json {7,10-17}{maxHeight:'390px'}
+```json {7,10-17}
 [
   {
     "changes": [
@@ -1332,14 +1327,6 @@ As an example, it can produce snapshots of the pipeline, by collating relevant i
   }
 ]
 ```
-
-<!--
-Thus using our example, when the change was made, we would get this diff.
-This immediately lets us know that an additional rule set was created that is different from the expected rule set from from all other jobs.
--->
-
----
-
 ```json
 [
   {
@@ -1354,8 +1341,18 @@ This immediately lets us know that an additional rule set was created that is di
   }
 ]
 ```
+````
 
 <!--
+As an example, it can produce snapshots of the pipeline, by collating relevant information, such as pairing together lists of jobs and changes.
+
+[click]
+
+Thus using our example, when the change was made, we would get this diff.
+This immediately lets us know that an additional rule set was created that is different from the expected rule set from from all other jobs.
+
+[click]
+
 So really, we should have seen this instead, where all the jobs are defined under the same changes.
 -->
 
