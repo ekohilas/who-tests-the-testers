@@ -2117,28 +2117,16 @@ That being said, they can help!
 -->
 
 ---
+---
 
+````md magic-move
 ```python {1}
 # pipeline_test.py
 ```
-
-<!--
-As the authors mentioned earlier, this programmatic approach does let you,
--->
-
----
-
 ```python {2}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
 ```
-
-<!--
-import your pipeline,
--->
-
----
-
 ```python {4-8}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
@@ -2151,13 +2139,6 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 
 ...
 ```
-
-<!--
-and perform tests on it,
--->
-
----
-
 ```python {6}
 # pipeline_test.py
 from pipeline_ci_config import pipeline
@@ -2170,13 +2151,6 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 
 ...
 ```
-
-<!--
-allowing us to do something similar like we've done with ci-test.
--->
-
----
-
 ```python
 # pipeline_test.py
 from pipeline_ci_config import pipeline
@@ -2189,8 +2163,25 @@ def test_pipeline_jobs_for_rules(expected_jobs_for_rules):
 
 ...
 ```
+````
 
 <!--
+As the authors mentioned earlier, this programmatic approach does let you,
+
+[click]
+
+import your pipeline,
+
+[click]
+
+and perform tests on it,
+
+[click]
+
+allowing us to do something similar like we've done with ci-test.
+
+[click]
+
 However, there is one other thing to consider...
 -->
 
