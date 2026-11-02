@@ -2186,8 +2186,10 @@ However, there is one other thing to consider...
 -->
 
 ---
+---
 
-```python {*}{maxHeight:'390px'}
+````md magic-move
+```python {*}
 # .gitlab-ci.py
 import gcip
 
@@ -2220,92 +2222,87 @@ pipeline.add_children(
 )
 pipeline.write_yaml()
 ```
+```python {7}
+# .gitlab-ci.py
+import gcip
+
+pipeline = gcip.Pipeline()
+pipeline.initialize_image("python:latest")
+
+app_changelist = ["**/*.py"]
+
+test_job = gcip.Job(
+    name="test-job",
+    script="python test.py",
+    rules=[gcip.Rule(changes=["**/*.py"])],
+)
+
+database_setup_job = gcip.Job(
+    name="database-setup-job",
+    script="python setup_test_database.py",
+    rules=[gcip.Rule(changes=["**/*.pu"])],
+)
+
+database_test_job = gcip.Job(
+    name="database-test-job",
+    script="python database_tests.py",
+    needs=[database_setup_job],
+    rules=[gcip.Rule(changes=["**/*.py"])],
+)
+
+pipeline.add_children(
+    test_job,
+    database_setup_job,
+    database_test_job,
+)
+pipeline.write_yaml()
+```
+```python {7,12,18}
+# .gitlab-ci.py
+import gcip
+
+pipeline = gcip.Pipeline()
+pipeline.initialize_image("python:latest")
+
+app_changelist = ["**/*.py"]
+
+test_job = gcip.Job(
+    name="test-job",
+    script="python test.py",
+    rules=[gcip.Rule(changes=app_changelist)],
+)
+
+database_setup_job = gcip.Job(
+    name="database-setup-job",
+    script="python setup_test_database.py",
+    rules=[gcip.Rule(changes=app_changelist)],
+)
+
+database_test_job = gcip.Job(
+    name="database-test-job",
+    script="python database_tests.py",
+    needs=[database_setup_job],
+    rules=[gcip.Rule(changes=app_changelist)],
+)
+
+pipeline.add_children(
+    test_job,
+    database_setup_job,
+    database_test_job,
+)
+pipeline.write_yaml()
+```
+````
 
 <!--
 Since our pipeline is now in Python,
--->
 
----
+[click]
 
-```python {7}{maxHeight:'390px'}
-# .gitlab-ci.py
-import gcip
-
-pipeline = gcip.Pipeline()
-pipeline.initialize_image("python:latest")
-
-app_changelist = ["**/*.py"]
-
-test_job = gcip.Job(
-    name="test-job",
-    script="python test.py",
-    rules=[gcip.Rule(changes=["**/*.py"])],
-)
-
-database_setup_job = gcip.Job(
-    name="database-setup-job",
-    script="python setup_test_database.py",
-    rules=[gcip.Rule(changes=["**/*.pu"])],
-)
-
-database_test_job = gcip.Job(
-    name="database-test-job",
-    script="python database_tests.py",
-    needs=[database_setup_job],
-    rules=[gcip.Rule(changes=["**/*.py"])],
-)
-
-pipeline.add_children(
-    test_job,
-    database_setup_job,
-    database_test_job,
-)
-pipeline.write_yaml()
-```
-
-<!--
 they do let us easily create a changeset using a list,
--->
 
----
+[click]
 
-```python {7,12,18}{maxHeight:'390px'}
-# .gitlab-ci.py
-import gcip
-
-pipeline = gcip.Pipeline()
-pipeline.initialize_image("python:latest")
-
-app_changelist = ["**/*.py"]
-
-test_job = gcip.Job(
-    name="test-job",
-    script="python test.py",
-    rules=[gcip.Rule(changes=app_changelist)],
-)
-
-database_setup_job = gcip.Job(
-    name="database-setup-job",
-    script="python setup_test_database.py",
-    rules=[gcip.Rule(changes=app_changelist)],
-)
-
-database_test_job = gcip.Job(
-    name="database-test-job",
-    script="python database_tests.py",
-    needs=[database_setup_job],
-    rules=[gcip.Rule(changes=app_changelist)],
-)
-
-pipeline.add_children(
-    test_job,
-    database_setup_job,
-    database_test_job,
-)
-pipeline.write_yaml()
-```
-
-<!--
 that we can apply everywhere, and thus help alleviate any rule mismatches, as all the rules will now be the same.
 This may have those of you knowledgeable in yaml thinking...
 -->
