@@ -97,11 +97,47 @@ function parseReveal(source: string): Slide[] {
   );
 }
 
+const MAGIC_MOVE = /^````md magic-move\n([\s\S]*?)^````$/m;
+
+/**
+ * Expands a magic move slide back into one slide per step, with the notes
+ * split on their [click] markers.
+ */
+function expandMagicMove(section: number, content: string, note: string | undefined): Slide[] | null {
+  const magicMove = content.match(MAGIC_MOVE);
+  if (!magicMove) {
+    return null;
+  }
+  const { code } = extractCode(magicMove[1], (info) => {
+    const [, lang, range] = info.match(/^(\w+)(?: \{([^}]*)\})?$/)!;
+    return { lang, highlight: normaliseHighlight(range) };
+  });
+  const notes = (note ?? "").split(/^\[click\]$/m).map((step) => step.trim());
+  if (notes.length !== code.length) {
+    throw new Error(`magic move has ${code.length} steps but ${notes.length} notes`);
+  }
+  const rest = content.replace(MAGIC_MOVE, "");
+  return code.map((step, index) => ({
+    section,
+    background: null,
+    text: visibleText(rest),
+    images: imageNames(rest),
+    clicks: 0,
+    code: [step],
+    notes: notes[index],
+  }));
+}
+
 async function parseSlidev(path: string): Promise<Slide[]> {
   const { slides } = await parse(await Bun.file(path).text(), path);
   let section = 0;
-  return slides.map(({ frontmatter, content, note }) => {
+  return slides.flatMap(({ frontmatter, content, note }) => {
     section = frontmatter.section ?? section;
+    const steps = expandMagicMove(section, content, note);
+    if (steps) {
+      return steps;
+    }
+
     const withoutStyles = content.replace(/<style>[\s\S]*?<\/style>/g, "");
     const { code, rest } = extractCode(withoutStyles, (info) => {
       const [, lang, range] = info.match(/^(\w+)(?: \{([^}]*)\})?(?:\{.*\})?$/)!;

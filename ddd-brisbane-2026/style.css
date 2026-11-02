@@ -3,3 +3,9 @@
   --slidev-code-font-size: 20px;
   --slidev-code-line-height: 1.33;
 }
+
+/* Scrolled by slide-top.vue, like code blocks with a maxHeight. */
+.slidev-code-magic-move {
+  max-height: 390px;
+  overflow-y: auto;
+}
