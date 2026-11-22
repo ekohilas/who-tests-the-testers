@@ -12,6 +12,8 @@ duration: 45min
 canvasWidth: 960
 # for styling parts of text
 mdc: true
+# github pages and surge serve the deck from a sub path with no spa fallback
+routerMode: hash
 section: 1
 layout: full
 ---
