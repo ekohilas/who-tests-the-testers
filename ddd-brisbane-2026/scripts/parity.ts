@@ -167,7 +167,36 @@ const [revealPath = "../ddd-melbourne-2026/slides.md", slidevPath = "slides.md"]
 const reveal = parseReveal(await Bun.file(revealPath).text());
 const slidev = await parseSlidev(slidevPath);
 
+/**
+ * Slides that intentionally differ from the reveal.js deck. Each entry finds
+ * exactly one reveal.js slide by its background and overrides only the listed
+ * fields with what the Slidev slide should have instead; every other field is
+ * still compared as usual.
+ */
+const INTENTIONAL_DIFFERENCES: { revealBackground: string; expected: Partial<Slide> }[] = [
+  // Brisbane uses the general thanks slide from the PyCon US 2025 deck
+  // instead of thanking the DDD Melbourne sponsors.
+  {
+    revealBackground: "ddd_sponsors.png",
+    expected: {
+      background: "hearts.svg",
+      notes:
+        "Thank you to my friends, and family for supporting me, the open source contributors, and finally to you, for listening!",
+    },
+  },
+];
+
 const failures: string[] = [];
+for (const { revealBackground, expected } of INTENTIONAL_DIFFERENCES) {
+  const matches = reveal.filter((slide) => slide.background === revealBackground);
+  if (matches.length !== 1) {
+    failures.push(
+      `intentional difference: expected one reveal.js slide with background ${revealBackground}, found ${matches.length}`,
+    );
+    continue;
+  }
+  Object.assign(matches[0], expected);
+}
 if (reveal.length !== slidev.length) {
   failures.push(`slide count: reveal.js has ${reveal.length}, slidev has ${slidev.length}`);
 }

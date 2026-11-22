@@ -3079,15 +3079,12 @@ And, if you're still wondering who tests the testers, I'll be around for questio
 
 ---
 layout: image
-image: /images/ddd_sponsors.png
+image: /images/hearts.svg
 backgroundSize: contain
 ---
 
 <!--
-Thanks to all the sponsors of DDD for bringing us all together,
-my friends and family for supporting me,
-the open source contributors,
-and finally to you, for listening!
+Thank you to my friends, and family for supporting me, the open source contributors, and finally to you, for listening!
 -->
 
 ---
