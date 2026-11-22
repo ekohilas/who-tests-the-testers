@@ -8,6 +8,7 @@ Resources on the project can be found [here](https://github.com/ekohilas/ci-test
 
 | Conference | Slides | Video | Notes | Length | Year |
 |------------|:------:|:-----:|:-----:|-------:|-----:|
+| [DDD Brisbane](https://www.dddbrisbane.com/) | [🔗](https://ekohilas.github.io/who-tests-the-testers/ddd-brisbane-2026) | [🔗](https://www.youtube.com/@ekohilas) | [🔗](https://www.dddbrisbane.com/agenda) | 45 min | 2026 |
 | [DDD Melbourne](https://www.dddmelbourne.com/) | [🔗](https://ekohilas.github.io/who-tests-the-testers/ddd-melbourne-2026) | [🔗](https://www.youtube.com/@ekohilas) | [🔗](https://www.dddmelbourne.com/agenda?sessionId=72e118f7-ba36-4e3c-887c-e01dad6a5adc) | 45 min | 2026 |
 | [PyCon US](https://us.pycon.org/2025) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-us-2025) | [🔗](https://www.youtube.com/@PyConUS/videos) | [🔗](https://us.pycon.org/2025/schedule/presentation/28/) | 30 min | 2025 |
 | [PyCon AU](https://2024.pycon.org.au) | [🔗](https://ekohilas.github.io/who-tests-the-testers/pycon-au-2024) | [🔗](https://www.youtube.com/watch?v=ilfLFBacNj4) | [🔗](https://2024.pycon.org.au/program/NUUJAN) | 30 min | 2024 |
@@ -70,3 +71,5 @@ Then, we'll showcase tools that can be used for testing, creating, and simulatin
 1. Since reveal.js exists as a submodule, `git clone --recurse-submodules` needs to be used when cloning (or `git submodule update --init --recursive` if already cloned).
 2. `cd src/reveal.js && npm install`
 3. `cd ../../ && ./start`
+
+The `ddd-brisbane-2026` deck is a [Slidev](https://sli.dev) project and doesn't need the reveal.js submodule: `cd ddd-brisbane-2026 && bun install && bun run dev`.
