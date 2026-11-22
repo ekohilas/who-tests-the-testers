@@ -9,3 +9,8 @@
   max-height: 390px;
   overflow-y: auto;
 }
+
+/* Tokens spill past the code's animating height, so hide the scrollbar meanwhile. */
+.slidev-code-magic-move:has(.shiki-magic-move-container-resize, .shiki-magic-move-move, .shiki-magic-move-leave-active) {
+  scrollbar-width: none;
+}
