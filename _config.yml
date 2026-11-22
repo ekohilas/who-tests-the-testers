@@ -1,2 +1,5 @@
 name: true
 title: false
+# Built with Slidev by .github/actions/build-site instead.
+exclude:
+  - ddd-brisbane-2026

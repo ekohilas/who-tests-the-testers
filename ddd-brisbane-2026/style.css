@@ -1,0 +1,11 @@
+/* Matches reveal-override.css's 40px code on a 1920px wide canvas. */
+.slidev-layout .slidev-code {
+  --slidev-code-font-size: 20px;
+  --slidev-code-line-height: 1.33;
+}
+
+/* Scrolled by slide-top.vue, like code blocks with a maxHeight. */
+.slidev-code-magic-move {
+  max-height: 390px;
+  overflow-y: auto;
+}
