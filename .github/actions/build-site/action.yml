@@ -1,0 +1,25 @@
+name: Build site
+description: Builds the site as GitHub Pages' Jekyll does, with the Slidev decks built into it, into ./_site.
+
+runs:
+  using: composite
+  steps:
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
+      with:
+        source: ./
+        destination: ./_site
+
+    - uses: oven-sh/setup-bun@v2
+
+    - name: Build ddd-brisbane-2026 with Slidev
+      shell: bash
+      working-directory: ddd-brisbane-2026
+      run: |
+        bun install --frozen-lockfile
+        bunx slidev build --base /ddd-brisbane-2026/ --out dist
+
+    # Jekyll's output is owned by root.
+    - name: Add ddd-brisbane-2026 to the site
+      shell: bash
+      run: sudo cp -r ddd-brisbane-2026/dist _site/ddd-brisbane-2026
