@@ -1,16 +1,57 @@
-/* Matches reveal-override.css's 40px code on a 1920px wide canvas. */
-.slidev-layout .slidev-code {
+/*
+ * Matches reveal-override.css's code on a 1920x1080 canvas, halved: 40px text
+ * on 48px lines with 40px padding.
+ */
+.slidev-layout {
   --slidev-code-font-size: 20px;
-  --slidev-code-line-height: 1.33;
+  --slidev-code-line-height: 24px;
+  --slidev-code-padding: 20px;
+  /* The theme's prism styles set the line height of plain code blocks' code. */
+  --prism-line-height: var(--slidev-code-line-height);
 }
 
-/* Scrolled by slide-top.vue, like code blocks with a maxHeight. */
+/*
+ * Like reveal.js, centre slides that are only code, in a box 88.75% of the
+ * slide's width (reveal-override.css's pre).
+ */
+.slidev-layout.default:has(> .slidev-code-wrapper) {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Like reveal.js, centre slides that are only headings, such as the numbered lists. */
+.slidev-layout.default:has(> h1):not(:has(> :not(h1))) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.slidev-layout.default > .slidev-code-wrapper {
+  --slidev-code-margin: 0;
+  width: 88.75%;
+}
+
+/*
+ * Scrolled by slide-top.vue, like code blocks with a maxHeight. As tall as
+ * reveal-override.css's code: 80% of the slide's height, padding included.
+ */
 .slidev-code-magic-move {
-  max-height: 390px;
+  max-height: 432px;
   overflow-y: auto;
 }
 
 /* Tokens spill past the code's animating height, so hide the scrollbar meanwhile. */
 .slidev-code-magic-move:has(.shiki-magic-move-container-resize, .shiki-magic-move-move, .shiki-magic-move-leave-active) {
   scrollbar-width: none;
+}
+
+/* Inter's narrow 1 sets "1." apart from "2." and "3.", so give the numbers equal widths. */
+.slidev-layout h1 {
+  font-variant-numeric: tabular-nums;
 }

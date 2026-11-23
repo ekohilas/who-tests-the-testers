@@ -2510,6 +2510,9 @@ Cog is a tool that allows you to use small bits of Python code in static files t
 
 ---
 layout: default
+# one magic move across sections, so the code animates into section 19
+sectionClicks:
+  9: 19
 ---
 
 ````md magic-move
@@ -2805,55 +2808,6 @@ database-test-job:
             - "**/*.py"
             #[[[end]]]
 ```
-````
-
-<!--
-So in our previous example where we wanted to unify these as a list...
-
-[click]
-
-We would first create a comment with a cog block
-
-[click]
-
-Add a python function to specify our changes
-
-[click]
-
-import cog, ...
-
-[click]
-
-To output the changes on iteration
-
-[click]
-
-And then where we've defined our changes,
-
-[click]
-
-we can use cog to run that function to output the change list.
-
-Then, when we run cog over the file,
-
-[click]
-
-It'll update what's between the tags with our generated output.
-
-And because it works on the file itself, there's no guessing what the generation will do.
-
-[click]
-
-Meaning that extending our list for one particular case is both easy to do and understand!
-
-> 32:15 (1:30) {18}
--->
-
----
-section: 19
----
-
-````md magic-move
 ```yaml {17}
 # .gitlab-ci.yml
 #[[[cog
@@ -2935,6 +2889,48 @@ database-test-job:
 ````
 
 <!--
+So in our previous example where we wanted to unify these as a list...
+
+[click]
+
+We would first create a comment with a cog block
+
+[click]
+
+Add a python function to specify our changes
+
+[click]
+
+import cog, ...
+
+[click]
+
+To output the changes on iteration
+
+[click]
+
+And then where we've defined our changes,
+
+[click]
+
+we can use cog to run that function to output the change list.
+
+Then, when we run cog over the file,
+
+[click]
+
+It'll update what's between the tags with our generated output.
+
+And because it works on the file itself, there's no guessing what the generation will do.
+
+[click]
+
+Meaning that extending our list for one particular case is both easy to do and understand!
+
+> 32:15 (1:30) {18}
+
+[click]
+
 If you're wondering "What if someone accidentally changes what's between the tags?" 
 
 Then there's a couple of options you have to protect your platform.
