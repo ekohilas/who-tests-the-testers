@@ -103,7 +103,12 @@ const MAGIC_MOVE = /^````md magic-move\n([\s\S]*?)^````$/m;
  * Expands a magic move slide back into one slide per step, with the notes
  * split on their [click] markers.
  */
-function expandMagicMove(section: number, content: string, note: string | undefined): Slide[] | null {
+function expandMagicMove(
+  section: number,
+  sectionClicks: Record<number, number>,
+  content: string,
+  note: string | undefined,
+): Slide[] | null {
   const magicMove = content.match(MAGIC_MOVE);
   if (!magicMove) {
     return null;
@@ -118,7 +123,8 @@ function expandMagicMove(section: number, content: string, note: string | undefi
   }
   const rest = content.replace(MAGIC_MOVE, "");
   return code.map((step, index) => ({
-    section,
+    // A magic move can carry on into the next section, so its code animates across it.
+    section: (section = sectionClicks[index] ?? section),
     background: null,
     text: visibleText(rest),
     images: imageNames(rest),
@@ -133,8 +139,9 @@ async function parseSlidev(path: string): Promise<Slide[]> {
   let section = 0;
   return slides.flatMap(({ frontmatter, content, note }) => {
     section = frontmatter.section ?? section;
-    const steps = expandMagicMove(section, content, note);
+    const steps = expandMagicMove(section, frontmatter.sectionClicks ?? {}, content, note);
     if (steps) {
+      section = steps.at(-1)!.section;
       return steps;
     }
 
