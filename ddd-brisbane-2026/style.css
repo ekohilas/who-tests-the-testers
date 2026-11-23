@@ -23,6 +23,15 @@
   align-items: center;
 }
 
+/* Like reveal.js, centre slides that are only headings, such as the numbered lists. */
+.slidev-layout.default:has(> h1):not(:has(> :not(h1))) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .slidev-layout.default > .slidev-code-wrapper {
   --slidev-code-margin: 0;
   width: 88.75%;
